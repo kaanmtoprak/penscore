@@ -1,0 +1,11 @@
+export {default as Features} from './Features';
+export {default as Brands} from './Brands';
+export {default as Approach} from './Approach';
+export {default as Hero} from './Hero';
+export {default as Compliances} from './Compliances';
+export {default as CaseStudy} from './CaseStudy';
+export {default as Counter} from './Counter';
+export {default as Testimonials} from './Testimonials';
+export {default as PricingComp} from './PricingComp';
+export {default as Newsletter} from './Newsletter';
+export {default as Faq} from './Faq';

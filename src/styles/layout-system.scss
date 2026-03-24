@@ -1,0 +1,107 @@
+@use "./settings/colors" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.row {
+  --gutter-x: 24px;
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+}
+
+.row > * {
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+
+.col-xs-12 { flex: 0 0 auto; width: 100%; }
+
+.col-sm-4 { flex: 0 0 auto; width: 100%; }
+.col-sm-6 { flex: 0 0 auto; width: 100%; }
+.col-sm-8 { flex: 0 0 auto; width: 100%; }
+.col-sm-12 { flex: 0 0 auto; width: 100%; }
+
+.col-md-6 { flex: 0 0 auto; width: 100%; }
+.col-md-12 { flex: 0 0 auto; width: 100%; }
+
+.col-lg-3 { flex: 0 0 auto; width: 100%; }
+.col-lg-4 { flex: 0 0 auto; width: 100%; }
+.col-lg-6 { flex: 0 0 auto; width: 100%; }
+.col-lg-8 { flex: 0 0 auto; width: 100%; }
+.col-lg-10 { flex: 0 0 auto; width: 100%; }
+.col-lg-12 { flex: 0 0 auto; width: 100%; }
+
+.offset-lg-1 { margin-left: 0; }
+
+@media (min-width: 576px) {
+  .col-sm-4 { width: 33.333333%; }
+  .col-sm-6 { width: 50%; }
+  .col-sm-8 { width: 66.666667%; }
+  .col-sm-12 { width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .col-md-6 { width: 50%; }
+  .col-md-12 { width: 100%; }
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 { width: 25%; }
+  .col-lg-4 { width: 33.333333%; }
+  .col-lg-6 { width: 50%; }
+  .col-lg-8 { width: 66.666667%; }
+  .col-lg-10 { width: 83.333333%; }
+  .col-lg-12 { width: 100%; }
+  .offset-lg-1 { margin-left: 8.333333%; }
+}
+
+.d-flex { display: flex !important; }
+.d-none { display: none !important; }
+
+@media (min-width: 1200px) {
+  .d-xl-block { display: block !important; }
+}
+
+.justify-content-center { justify-content: center !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.align-items-center { align-items: center !important; }
+.align-self-center { align-self: center !important; }
+
+.text-center { text-align: center !important; }
+.text-end { text-align: right !important; }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+body.mmactive {
+  overflow: hidden;
+}

@@ -1,0 +1,430 @@
+{
+  "common": {
+    "backToTop": "Üste dön",
+    "carouselPrev": "Önceki logolar",
+    "carouselNext": "Sonraki logolar"
+  },
+  "home": {
+    "hero": {
+      "badge": "Mobil Uygulama Güvenlik Platformu",
+      "headline": "Gizli Risklerle App Göndermeyin.",
+      "subtext": "PenScore, Android ve iOS uygulamalarınızı derin static analysis ile tarar — vulnerability'leri, hardcoded secret'ları ve compliance boşluklarını bir sonraki release'inizden önce tespit eder. Source code gerekmez.",
+      "ctaPrimary": "Ücretsiz Başlayın",
+      "ctaSecondary": "Nasıl Çalışır?",
+      "trustedByLabel": "Güvenlik ekiplerinin tercihi",
+      "trustedByLogos": "Akbank / Garanti BBVA / Papara / Yemeksepeti / Trendyol / n11"
+    },
+    "brands": {
+      "kicker": "Sektör genelinde güvenilen"
+    },
+    "metrics": {
+      "ariaLabel": "Platform metrikleri",
+      "stat1": {
+        "value": "2.000+",
+        "label": "App Tarandı"
+      },
+      "stat2": {
+        "value": "240+",
+        "label": "Security Rule"
+      },
+      "stat3": {
+        "value": "<3 dk",
+        "label": "Ortalama Scan"
+      },
+      "stat4": {
+        "value": "%98",
+        "label": "Detection Rate"
+      }
+    },
+    "features": {
+      "sectionLabel": "Platform Özellikleri",
+      "sectionHeadline": "Mobil İçin Üretildi, Adapte Edilmedi.",
+      "sectionSubtext": "Uygulamanızı gerçek bir saldırgan gibi tersine çeviren derin analiz — yüzeysel pattern matching değil.",
+      "feature1": {
+        "title": "APK & IPA Static Analysis",
+        "desc": "Tam DEX decompilation, binary inspection, manifest parsing ve native library scanning. Binary'nizi bırakın — source code gerekmez.",
+        "tag": "androguard · lief · jadx"
+      },
+      "feature2": {
+        "title": "PenScore™ Risk Engine",
+        "desc": "Tescilli scoring motoru, finding'leri MASVS v2 ve OWASP Mobile Top 10 ile eşleştirerek net 0–100 risk skoru ve finding başına CVSS üretir.",
+        "tag": "MASVS v2 · OWASP M10 · CVSS"
+      },
+      "feature3": {
+        "title": "Secret & Credential Detection",
+        "desc": "Saldırganlardan önce binary veya config dosyalarına gömülü API key, token ve private key'leri bulur.",
+        "tag": "CWE-798 · CWE-321"
+      },
+      "feature4": {
+        "title": "CI/CD Integration",
+        "desc": "REST API ve webhook ile her release'i PenScore'a göre otomatik olarak kontrol edin — threshold'u geçemeyen build'leri durdurun.",
+        "tag": "REST · GitHub Actions · Webhook"
+      },
+      "feature5": {
+        "title": "Compliance Mapping",
+        "desc": "KVKK, BDDK, PCI-DSS ve GDPR'a otomatik mapping. Compliance ekibinizin doğrudan sunabileceği audit-ready report'lar alın.",
+        "tag": "KVKK · BDDK · PCI-DSS · GDPR"
+      },
+      "feature6": {
+        "title": "Web Dashboard",
+        "desc": "Upload edin, scan geçmişini takip edin, severity'e göre filtreleyin ve PDF/JSON report alın. CLI veya setup gerekmez.",
+        "tag": "React · REST API"
+      }
+    },
+    "howItWorks": {
+      "sectionLabel": "Nasıl Çalışır",
+      "sectionHeadline": "Upload'dan Report'a 3 Dakikada.",
+      "sectionSubtext": "Setup yok, agent yok, source code yok. Binary'nizi bırakın — önceliklendirilmiş, actionable bir security report alın.",
+      "step1": {
+        "title": "Binary'nizi Upload Edin",
+        "desc": "APK veya IPA'nızı dashboard'a sürükleyin ya da CI pipeline'ınızdan direkt REST API ile gönderin."
+      },
+      "step2": {
+        "title": "Engine 240+ Check Çalıştırır",
+        "desc": "PenScore tüm MASVS kategorilerinde paralel olarak decompile, parse ve security check çalıştırır. Ortalama süre 3 dakikanın altında."
+      },
+      "step3": {
+        "title": "Risk Score + Öncelikli Finding'ler",
+        "desc": "CVSS mapping, severity breakdown ve finding başına remediation guidance içeren net 0–100 PenScore."
+      },
+      "step4": {
+        "title": "Audit-Ready Report Alın",
+        "desc": "Tam CWE ve MASVS referanslı PDF ve JSON export — iç inceleme, BDDK/KVKK sunumu veya developer handoff için hazır."
+      }
+    },
+    "caseStudy": {
+      "badge": "Case Study",
+      "industry": "Fintech · İstanbul",
+      "headline": "Bir Fintech Security Review Süresini Nasıl %80 Kıstı",
+      "body": "Hızlı büyüyen bir ödeme şirketi, her sprint release'inden önce her APK'yı manuel olarak review ediyordu — cycle başına 3-5 gün sürüyordu. PenScore'u CI/CD pipeline'ına integrate ettikten sonra security review'lar otomatik ve anlık hale geldi. O günden bu yana production'a sıfır critical issue ulaştı.",
+      "stat1": "%80 Daha Hızlı Security Review",
+      "stat2": "Production'da 0 Critical Issue",
+      "stat3": "BDDK Audit Hazırlığında 4 Hafta Tasarruf",
+      "link": "Case Study'nin Tamamını Oku →",
+      "quote": "\"PenScore, production binary'mizde 8 aydır duran bir hardcoded private key buldu. Report standup bitmeden hazırdı. Aynı gün fix ship ettik.\"",
+      "quoteAuthorName": "Ahmet K.",
+      "quoteAuthorRole": "Lead Security Engineer",
+      "quoteAuthorSector": "Fintech · İstanbul"
+    },
+    "compliance": {
+      "sectionLabel": "Compliance Coverage",
+      "sectionHeadline": "Düzenlemeli Sektörler İçin Üretildi.",
+      "sectionSubtext": "PenScore her finding'i auditor'larınızın beklediği compliance framework'lere otomatik olarak map eder — her scan'de.",
+      "badge1": { "name": "BDDK", "desc": "Bankacılık düzenlemesi" },
+      "badge2": { "name": "KVKK", "desc": "Kişisel veri koruma" },
+      "badge3": { "name": "PCI-DSS", "desc": "Ödeme kartı güvenliği" },
+      "badge4": { "name": "MASVS v2", "desc": "Mobile App Security Standard" },
+      "badge5": { "name": "OWASP M10", "desc": "Mobile Top 10" },
+      "badge6": { "name": "GDPR", "desc": "AB veri düzenlemesi" }
+    },
+    "testimonials": {
+      "sectionLabel": "Müşterilerimiz Ne Diyor",
+      "sectionHeadline": "Hızlı Ship Eden ve Güvende Kalan Ekiplerin Tercihi.",
+      "t1": {
+        "text": "\"PenScore, production binary'mizde 8 aydır olan bir hardcoded API key buldu. Report standup bitmeden hazırdı.\"",
+        "name": "Ahmet K.",
+        "role": "Lead Security Engineer",
+        "sector": "Fintech"
+      },
+      "t2": {
+        "text": "\"PenScore'u GitHub Actions pipeline'ımıza integrate ettik. Her PR artık risk score alıyor — security artık release blocker değil, built-in.\"",
+        "name": "Merve Y.",
+        "role": "Mobile Platform Lead",
+        "sector": "E-Commerce"
+      },
+      "t3": {
+        "text": "\"BDDK compliance report'u bize haftalarca sürecek manuel dokümantasyonu kurtardı. Auditor tek soru sormadan kabul etti.\"",
+        "name": "Cem Ö.",
+        "role": "CISO",
+        "sector": "Banking"
+      }
+    },
+    "newsletter": {
+      "sectionLabel": "Bülten",
+      "headline": "Ürün güncellemeleri ve security içgörüleri.",
+      "subtext": "Release notları, yeni kurallar ve mobil güvenlik trendleri — ayda bir, spam yok.",
+      "placeholder": "E-posta adresiniz",
+      "submit": "Abone ol",
+      "hint": "İstediğiniz zaman abonelikten çıkabilirsiniz. Adresinizi üçüncü taraflarla paylaşmıyoruz."
+    },
+    "ctaBand": {
+      "badge": "Bugün Başlayın",
+      "headline": "Saldırganların App'inizde Gördüğünü Bulmaya Hazır Mısınız?",
+      "subtext": "Free trial başlatın veya live demo isteyin. App'inizi tarayıp 30 dakikada finding'leri birlikte inceleriz — commitment gerekmez.",
+      "ctaPrimary": "Ücretsiz Başlayın",
+      "ctaSecondary": "Demo İsteyin"
+    }
+  },
+  "pricing": {
+    "pageHeadline": "Sade Fiyatlandırma, Sürpriz Yok.",
+    "pageSubtext": "İstediğiniz zaman iptal edin. Setup ücreti yok. Per-seat saçmalığı yok.",
+    "billingToggle": "Aylık / Yıllık (%20 Tasarruf)",
+    "hero": {
+      "badge": "Fiyatlandırma",
+      "headline": "Sade Fiyatlandırma, Sürpriz Yok.",
+      "subtext": "Bireysel developer'lar, security team'ler ve kurumlar için şeffaf paketler. Faturalandırmayı istediğiniz zaman değiştirin — gizli ücret yok."
+    },
+    "billingMonthly": "Aylık",
+    "billingAnnual": "Yıllık",
+    "billingSaveHint": "Starter ve Professional'da yıllık faturalandırmayla %20 tasarruf edin.",
+    "comparison": {
+      "title": "Tüm özellikleri karşılaştırın",
+      "subtitle": "Her planda nelerin dahil olduğunu tek bakışta görün.",
+      "colFeature": "Özellik",
+      "rows": [
+        {
+          "label": "Scan'ler",
+          "starter": "Ayda 25",
+          "professional": "Sınırsız",
+          "enterprise": "Sınırsız"
+        },
+        {
+          "label": "APK & IPA desteği",
+          "starter": "Dahil",
+          "professional": "Dahil",
+          "enterprise": "Dahil"
+        },
+        {
+          "label": "PenScore™ risk skoru",
+          "starter": "Dahil",
+          "professional": "Dahil",
+          "enterprise": "Dahil"
+        },
+        {
+          "label": "REST API & Webhook",
+          "starter": "—",
+          "professional": "Dahil",
+          "enterprise": "Dahil"
+        },
+        {
+          "label": "MASVS / OWASP eşlemesi",
+          "starter": "—",
+          "professional": "Dahil",
+          "enterprise": "Dahil"
+        },
+        {
+          "label": "Ekip koltukları",
+          "starter": "1",
+          "professional": "5",
+          "enterprise": "Sınırsız"
+        },
+        {
+          "label": "On-premise kurulum",
+          "starter": "—",
+          "professional": "—",
+          "enterprise": "Dahil"
+        },
+        {
+          "label": "Dedicated account manager",
+          "starter": "—",
+          "professional": "—",
+          "enterprise": "Dahil"
+        }
+      ]
+    },
+    "starter": {
+      "name": "Starter",
+      "priceMonthly": "$199/mo",
+      "priceAnnual": "$159/mo",
+      "desc": "Mobile security'e başlayan bireysel developer'lar ve küçük ekipler için.",
+      "features": [
+        "Ayda 25 scan",
+        "APK + IPA desteği",
+        "PenScore™ risk scoring",
+        "PDF report export",
+        "Email support"
+      ],
+      "cta": "Başlayın"
+    },
+    "professional": {
+      "name": "Professional",
+      "badge": "En Popüler",
+      "priceMonthly": "$599/mo",
+      "priceAnnual": "$479/mo",
+      "desc": "CI/CD ve compliance ihtiyacı olan, birden fazla app yöneten security team'ler için.",
+      "features": [
+        "Unlimited scan",
+        "APK + IPA desteği",
+        "PenScore™ risk scoring",
+        "REST API + Webhook",
+        "MASVS / OWASP mapping",
+        "5 kullanıcı",
+        "Priority support",
+        "PDF + JSON export"
+      ],
+      "cta": "Başlayın"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Özel Fiyat",
+      "desc": "On-premise veya sıkı compliance gereksinimleri olan bankalar, fintech'ler ve büyük kurumlar için.",
+      "features": [
+        "On-premise deployment",
+        "Custom compliance rule'lar",
+        "BDDK / KVKK report'lar",
+        "Unlimited kullanıcı",
+        "Dedicated account manager",
+        "SLA garantisi",
+        "Custom integration'lar",
+        "Security audit desteği"
+      ],
+      "cta": "Satış Ekibiyle İletişime Geçin"
+    },
+    "faq": {
+      "sectionHeadline": "Sıkça Sorulan Sorular",
+      "q1": "Source code sağlamam gerekiyor mu?",
+      "a1": "Hayır. PenScore derlenmiş binary'nizi (APK veya IPA) direkt analiz eder. Source code, credential veya server erişimi gerekmez.",
+      "q2": "Bir scan ne kadar sürer?",
+      "a2": "Çoğu scan 3 dakikadan kısa sürede tamamlanır. Çok sayıda native library içeren büyük app'ler 5 dakikaya kadar sürebilir.",
+      "q3": "PenScore'u CI/CD pipeline'ıma integrate edebilir miyim?",
+      "a3": "Evet. Professional ve Enterprise plan'lar REST API ve webhook desteği içerir. PenScore threshold'unuzun altında kalan build'leri otomatik olarak block edebilirsiniz.",
+      "q4": "APK veya IPA'm scan sonrasında saklanıyor mu?",
+      "a4": "Binary'ler scan tamamlandıktan sonra 24 saat içinde server'larımızdan silinir. Scan result'ları ve report'lar plan'ınıza göre saklanır.",
+      "q5": "PenScore hangi compliance framework'leri kapsar?",
+      "a5": "PenScore, finding'leri BDDK, KVKK, PCI-DSS, MASVS v2, OWASP Mobile Top 10 ve GDPR ile map eder. Enterprise plan'lar custom compliance rule set'leri destekler.",
+      "q6": "İstediğim zaman iptal edebilir miyim?",
+      "a6": "Evet. Sözleşme yok, iptal ücreti yok. Dashboard'unuzdan istediğiniz zaman iptal edin."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Misyonumuz",
+      "headline": "Mobile App'leri Herkes İçin Daha Güvenli Yapıyoruz.",
+      "subtext": "PenScore, erişilebilir ve developer-friendly security tool'ların yokluğundan rahatsız olan mobile developer'lar tarafından kuruldu. Her ekibin — yalnızca özel security bütçesi olanlar değil — güvenli app ship etmeyi hak ettiğine inanıyoruz.",
+      "pill1": "Ürün",
+      "pill2": "Misyon",
+      "cardLabel": "Önce güvenlik"
+    },
+    "story": {
+      "sectionHeadline": "PenScore'u Neden Kurduk",
+      "body": "PenScore fikri 2023 yılında, kurucumuzun bir fintech şirketinde senior Android developer olarak çalışırken production binary'de bir yılı aşkın süredir duran bir hardcoded API key keşfetmesiyle doğdu. Manuel security review süreci bunu tamamen kaçırmıştı.\n\nMevcut tool'lar ya küçük ekipler için çok pahalıydı, ya integrate etmesi çok karmaşıktı, ya da önemli şeyleri yakalamak için çok yüzeyseldi. Bu yüzden PenScore'u inşa ettik: senior bir security engineer'ın yapacağını otomatik ve her developer'a erişilebilir şekilde yapan bir platform.\n\nBugün PenScore her ay binlerce app'i tarayarak fintech, bankacılık, e-ticaret ve sağlık sektörlerindeki ekiplerin güvenle ship etmesine yardımcı oluyor."
+    },
+    "values": {
+      "sectionHeadline": "Değerlerimiz",
+      "v1": {
+        "title": "Developer-First",
+        "desc": "Security tool'lar developer workflow'larına uyum sağlamalı, tersi değil. PenScore aylar değil dakikalar içinde integrate edilecek şekilde yapıldı."
+      },
+      "v2": {
+        "title": "Erişilebilir Security",
+        "desc": "Enterprise düzeyinde security analysis, enterprise bütçesi gerektirmemeli. Her plan aynı derinlikte analiz sunar."
+      },
+      "v3": {
+        "title": "Şeffaflık",
+        "desc": "Her finding net bir açıklama, CWE/MASVS referansı ve remediation guidance ile birlikte gelir. Black box yok."
+      },
+      "v4": {
+        "title": "Sürekli Gelişim",
+        "desc": "Threat landscape sürekli değişiyor. Her hafta yeni detection rule'ları ship ediyor, her düzenleyici değişiklikte compliance mapping'lerimizi güncelliyoruz."
+      }
+    },
+    "team": {
+      "sectionHeadline": "Ekip",
+      "sectionSubtext": "Mobile security engineer'lar, developer'lar ve compliance uzmanlarından oluşan küçük bir ekip.",
+      "member1": {
+        "name": "Duran Ü.",
+        "role": "Kurucu & CEO — Fintech mobile security'de 10+ yıl deneyimli Senior Android Developer."
+      }
+    },
+    "cta": {
+      "headline": "Bize Katılmak İster Misiniz?",
+      "subtext": "Her zaman yetenekli engineer'lar ve security researcher'lar arayan remote-first bir ekibiz.",
+      "cta": "Açık Pozisyonları Gör"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "İletişim",
+      "headline": "Konuşalım.",
+      "subtext": "Demo istemek, fiyatlandırma hakkında sormak veya enterprise integration görüşmek istiyorsanız — 1 iş günü içinde yanıt veriyoruz."
+    },
+    "options": {
+      "opt1": {
+        "title": "Demo İsteyin",
+        "desc": "Gerçek app'inizi tarayıp 30 dakikada finding'leri canlı olarak birlikte inceleriz."
+      },
+      "opt2": {
+        "title": "Satış & Fiyatlandırma",
+        "desc": "Plan'lar, enterprise fiyatlandırma veya custom deployment hakkında sorularınız için."
+      },
+      "opt3": {
+        "title": "Teknik Destek",
+        "desc": "Integration, API veya scan result konusunda yardıma mı ihtiyacınız var?"
+      },
+      "email": "info@penscore.io"
+    },
+    "form": {
+      "title": "Demo Talep Edin",
+      "subtitle": "1 iş günü içinde geri döneceğiz.",
+      "field1": "Ad",
+      "field2": "Soyad",
+      "field3": "İş E-postası",
+      "field4": "Şirket",
+      "field5": "Ekip Büyüklüğü",
+      "field5Options": ["1–5 kişi", "6–20 kişi", "21–50 kişi", "50+ kişi"],
+      "field6": "Ne çözmek istiyorsunuz?",
+      "field6Placeholder": "Mevcut mobile security challenge'larınızı anlatın...",
+      "submit": "Demo Talep Et →",
+      "note": "Spam yok. İstediğiniz zaman çıkın. Data'nızı asla paylaşmıyoruz.",
+      "bulletsTitle": "Demo ile birlikte",
+      "bullets": [
+        "Gerçek APK veya IPA'nızın live scan'i",
+        "Security engineer'ımızla finding walkthrough",
+        "Sektörünüze özel compliance gap analizi",
+        "Sizde kalan sample report — hiçbir koşul yok"
+      ]
+    }
+  },
+  "global": {
+    "logo": "PenScore",
+    "nav": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "cta": "Hemen başlayın",
+      "ariaMainNav": "Ana menü",
+      "ariaMobileNav": "Mobil menü",
+      "ariaOpenMenu": "Menüyü aç",
+      "ariaCloseMenu": "Menüyü kapat",
+      "ariaCloseOverlay": "Menüyü kapat",
+      "ariaLangSelector": "Dil seçimi",
+      "drawerTitle": "Menü",
+      "drawerClose": "Kapat",
+      "mobileLangSummary": "Dil",
+      "platform": "Platform",
+      "solutions": "Çözümler",
+      "resources": "Kaynaklar",
+      "pricing": "Fiyatlar",
+      "login": "Giriş",
+      "requestDemo": "Demo İste",
+      "dropdownPlatform": ["Static Analysis", "PenScore™ Engine", "Integration'lar", "API Reference"],
+      "dropdownSolutions": ["Fintech & Bankacılık", "Enterprise", "Security Team'ler", "Sağlık"],
+      "dropdownResources": ["Blog", "Case Study'ler", "Docs", "Security Research", "Changelog"]
+    },
+    "footer": {
+      "tagline": "Fintech, bankacılık ve enterprise ekipler için mobile application security platform.",
+      "col1Title": "Platform",
+      "col1": ["Static Analysis", "PenScore™ Engine", "Integration'lar", "API Reference", "Changelog"],
+      "col2Title": "Çözümler",
+      "col2": ["Fintech & Bankacılık", "Enterprise", "Security Team'ler", "Sağlık"],
+      "col3Title": "Kaynaklar",
+      "col3": ["Blog", "Case Study'ler", "Docs", "Security Research"],
+      "col4Title": "Şirket",
+      "col4": ["Hakkımızda", "Kariyer", "Partner'lar", "İletişim", "Güven & Security"],
+      "copyright": "© 2025 PenScore. Tüm hakları saklıdır.",
+      "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+      "contactEmail": "info@penscore.io"
+    }
+  },
+  "notFound": {
+    "badge": "Sayfa bulunamadı",
+    "headline": "Aradığınız sayfa yok veya taşınmış olabilir.",
+    "subtext": "URL’yi kontrol edin veya ana sayfaya dönün.",
+    "cta": "Ana sayfaya dön",
+    "goBack": "Geri git"
+  },
+  "metadata": {
+    "homeTitle": "PenScore",
+    "contactTitle": "Cybal Contact - Cyber Security Next js Template"
+  }
+}

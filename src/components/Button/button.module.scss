@@ -1,0 +1,139 @@
+@use "../../styles/settings/colors" as *;
+
+.primary {
+  background-image: -webkit-linear-gradient(
+    to right,
+    $blue-legacy 0%,
+    $pink-hot 51%,
+    $pink-hot 100%
+  );
+  background-image: linear-gradient(
+    to right,
+    $blue-legacy 0%,
+    $pink-hot 51%,
+    $pink-hot 100%
+  );
+  border-radius: 3px;
+  background-size: 200% auto;
+  border-style: none;
+  color: $white;
+  font-weight: 600;
+  padding: 14px 33px;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 15px;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-position: right center;
+    color: $white;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .primary {
+    padding: 14px 25px;
+    margin-top: 0;
+  }
+}
+
+.outline {
+  border: 1px solid $cyan-base;
+  padding: 10px 30px;
+  border-radius: 2px;
+  color: $cyan-base;
+  margin-left: 20px;
+  transition: 0.3s;
+  display: inline-block;
+
+  &:hover {
+    background: $cyan-base;
+    color: $black;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .outline {
+    margin-left: 0;
+  }
+}
+
+.blog {
+  color: $cyan-base;
+  display: inline-block;
+
+  i {
+    font-size: 12px;
+  }
+}
+
+.subscribe {
+  background-color: $cyan-base;
+  border-radius: 100px;
+  color: $black;
+  cursor: pointer;
+  display: block;
+  font-size: 22px;
+  height: 52px;
+  position: absolute;
+  right: 80px;
+  top: 0;
+  width: 54px;
+  border: none;
+
+  &:hover i {
+    color: $black;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .subscribe {
+    right: 0;
+  }
+}
+
+.video {
+  display: inline-block;
+  position: relative;
+
+  i {
+    background: $cyan-base;
+    border: 2px solid $cyan-base;
+    color: $black;
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    text-align: center;
+    border-radius: 100px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    margin-left: 30px;
+  }
+
+  &:hover i {
+    background: none;
+    color: $cyan-base;
+    border: 2px solid $cyan-base;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .video i {
+    margin-left: 15px;
+  }
+}
+
+.videoTitle {
+  font-weight: 600;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 16px;
+}

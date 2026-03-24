@@ -1,0 +1,455 @@
+@use "../../styles/settings/colors" as *;
+
+.page {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  padding: 36px 20px 48px;
+  overflow: hidden;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeUp 0.65s ease both;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba($cyan-base, 0.14), rgba($blue-base, 0.1));
+  border: 1px solid rgba($cyan-base, 0.38);
+  color: $cyan-base;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.heroTitle {
+  margin: 0 0 14px;
+  color: $white;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-wrap: balance;
+  background: linear-gradient(115deg, $white 0%, rgba($white, 0.9) 50%, rgba($cyan-base, 0.92) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSub {
+  margin: 0 auto;
+  max-width: 620px;
+  color: rgba($white, 0.84);
+  line-height: 1.75;
+  font-size: clamp(15px, 1.5vw, 18px);
+}
+
+.section {
+  padding: 0 20px 90px;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.optionCard {
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba($cyan-base, 0.22);
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  animation: riseIn 0.55s ease both;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($cyan-base, 0.45);
+    box-shadow: none;
+  }
+
+  h3 {
+    position: relative;
+    margin: 0 0 8px;
+    color: $white;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  p {
+    position: relative;
+    margin: 0;
+    color: rgba($white, 0.78);
+    line-height: 1.55;
+    font-size: 14px;
+  }
+}
+
+.optionIcon {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: $cyan-base;
+  border: 1px solid rgba($cyan-base, 0.35);
+  background: rgba($cyan-base, 0.06);
+  box-shadow: none;
+  animation: iconPulse 3s ease-in-out infinite;
+
+  svg {
+    font-size: 20px;
+  }
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.formWrap {
+  position: relative;
+  padding: 28px 24px 26px;
+  border-radius: 18px;
+  border: 1px solid rgba($cyan-base, 0.22);
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.formHead {
+  position: relative;
+  margin-bottom: 22px;
+
+  h2 {
+    margin: 0 0 8px;
+    color: $white;
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0;
+    color: rgba($white, 0.72);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+.form {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba($white, 0.72);
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba($cyan-base, 0.2);
+  background: transparent;
+  color: $white;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: rgba($white, 0.38);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba($cyan-base, 0.55);
+    box-shadow: 0 0 0 3px rgba($cyan-base, 0.12);
+  }
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, $cyan-base 50%),
+    linear-gradient(135deg, $cyan-base 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 13px) calc(50% - 3px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+.submit {
+  margin-top: 4px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -120%;
+    left: -25%;
+    width: 38%;
+    height: 280%;
+    transform: rotate(22deg);
+    background: linear-gradient(90deg, rgba($white, 0), rgba($white, 0.22), rgba($white, 0));
+    transition: transform 0.65s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    transform: translateX(320%) rotate(22deg);
+  }
+}
+
+.note {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba($white, 0.48);
+  line-height: 1.5;
+}
+
+.side {
+  display: grid;
+  gap: 16px;
+  animation: fadeUp 0.75s 0.15s ease both;
+}
+
+.sideCard {
+  position: relative;
+  padding: 22px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba($cyan-base, 0.2);
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.sideCard h3 {
+  position: relative;
+  margin: 0 0 14px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bullets {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba($white, 0.84);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: $cyan-base;
+    font-size: 16px;
+  }
+}
+
+.emailCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba($cyan-base, 0.28);
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+  animation: floatSoft 5.5s ease-in-out infinite;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba($cyan-base, 0.5);
+    box-shadow: none;
+  }
+}
+
+.emailIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: $cyan-base;
+  border: 1px solid rgba($cyan-base, 0.35);
+  background: rgba($cyan-base, 0.06);
+
+  svg {
+    font-size: 22px;
+  }
+}
+
+.emailLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba($white, 0.55);
+  margin-bottom: 2px;
+}
+
+.emailAddr {
+  font-size: 15px;
+  font-weight: 700;
+  color: $white;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 16px rgba($black, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 8px 16px rgba($black, 0.2),
+      0 0 0 6px rgba($cyan-base, 0.04);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 1020px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .emailCard {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 28px 16px 36px;
+  }
+
+  .section {
+    padding: 0 16px 72px;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .formWrap {
+    padding: 22px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .optionIcon,
+  .emailCard,
+  .formWrap {
+    animation: none;
+  }
+
+  .optionCard {
+    animation: none;
+  }
+
+  .submit::after {
+    transition: none;
+  }
+}

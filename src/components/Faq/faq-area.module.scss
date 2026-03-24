@@ -1,0 +1,130 @@
+@use "../../styles/settings/colors" as *;
+
+.section {
+  padding: 90px 20px;
+  background: transparent;
+}
+
+.sectionFlat {
+  padding-top: 48px;
+}
+
+.itemFlat {
+  background: transparent;
+  border-color: rgba($cyan-base, 0.18);
+}
+
+.itemFlat.itemOpen {
+  box-shadow: none;
+  border-color: rgba($cyan-base, 0.42);
+}
+
+.wrapper {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.heading {
+  margin-bottom: 24px;
+  text-align: center;
+
+  h2 {
+    margin: 10px 0 0;
+    color: $white;
+    font-size: clamp(30px, 3.8vw, 44px);
+    line-height: 1.2;
+  }
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba($cyan-base, 0.3);
+  color: $cyan-base;
+  background: rgba($cyan-base, 0.08);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+}
+
+.item {
+  border-radius: 14px;
+  border: 1px solid rgba($white, 0.1);
+  background: linear-gradient(180deg, rgba($navy-800, 0.95), rgba($navy-850, 0.95));
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.itemOpen {
+  border-color: rgba($cyan-base, 0.45);
+  box-shadow: 0 14px 34px rgba($black, 0.24);
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 0;
+  background: transparent;
+  color: $white;
+  text-align: left;
+  padding: 20px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.itemOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.answerWrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.itemOpen .answerWrap {
+  max-height: 220px;
+}
+
+.answer {
+  margin: 0;
+  padding: 0 22px 20px;
+  color: rgba($white, 0.78);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .question {
+    padding: 16px 16px;
+    font-size: 15px;
+  }
+
+  .answer {
+    padding: 0 16px 16px;
+    font-size: 14px;
+  }
+}

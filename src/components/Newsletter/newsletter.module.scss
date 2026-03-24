@@ -1,0 +1,185 @@
+@use "../../styles/settings/colors" as *;
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.section {
+  position: relative;
+  padding: 72px 20px 88px;
+  overflow: hidden;
+}
+
+.inner {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.panel {
+  padding: 32px 28px 34px;
+  border-radius: 18px;
+  border: 1px solid rgba($cyan-base, 0.22);
+  background: transparent;
+  box-shadow: none;
+  animation: fadeUp 0.65s ease both;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba($cyan-base, 0.14), rgba($blue-base, 0.1));
+  border: 1px solid rgba($cyan-base, 0.38);
+  color: $cyan-base;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0 0 12px;
+  color: $white;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-wrap: balance;
+  background: linear-gradient(115deg, $white 0%, rgba($white, 0.9) 50%, rgba($cyan-base, 0.92) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 520px;
+  color: rgba($white, 0.78);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+}
+
+.form {
+  margin-top: 26px;
+  display: grid;
+  gap: 12px;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-radius: 12px;
+  border: 1px solid rgba($cyan-base, 0.22);
+  background: transparent;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus-within {
+    border-color: rgba($cyan-base, 0.5);
+    box-shadow: 0 0 0 3px rgba($cyan-base, 0.12);
+  }
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: $white;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.4;
+
+  &::placeholder {
+    color: rgba($white, 0.38);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.submit {
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 0 !important;
+  border-left: 1px solid rgba($cyan-base, 0.22);
+  padding: 14px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+
+  svg {
+    font-size: 18px;
+  }
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba($white, 0.45);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 56px 16px 72px;
+  }
+
+  .panel {
+    padding: 26px 20px 28px;
+  }
+
+  .fieldRow {
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 0;
+  }
+
+  .submit {
+    width: 100%;
+    border-radius: 0 0 11px 11px !important;
+    padding: 14px 18px;
+    border-left: 0;
+    border-top: 1px solid rgba($cyan-base, 0.15);
+  }
+
+  .input {
+    border-bottom: 1px solid rgba($cyan-base, 0.15);
+    border-radius: 11px 11px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

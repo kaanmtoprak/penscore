@@ -1,0 +1,542 @@
+@use "../../styles/settings/colors" as *;
+
+.section {
+  padding: 90px 20px 70px;
+  background: transparent;
+}
+
+.wrapper {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.content {
+  min-width: 0;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba($cyan-base, 0.18);
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.industry {
+  margin: 0 0 8px;
+  color: $cyan-base;
+  font-weight: 600;
+}
+
+.title {
+  margin: 0 0 14px;
+  color: $white;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.body {
+  margin: 0;
+  color: rgba($white, 0.82);
+}
+
+.stats {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.statCard {
+  position: relative;
+  background: linear-gradient(150deg, rgba($navy-800, 0.96), rgba($navy-900, 0.96));
+  border: 1px solid rgba($cyan-base, 0.22);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba($black, 0.2);
+  animation: riseIn 0.55s ease both;
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba($cyan-base, 0.2) 0%, rgba($cyan-base, 0) 72%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($cyan-base, 0.45);
+    box-shadow: 0 16px 28px rgba($black, 0.26);
+  }
+
+  h3 {
+    margin: 0;
+    color: $white;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+}
+
+.statIcon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: $cyan-base;
+  border: 1px solid rgba($cyan-base, 0.32);
+  background: linear-gradient(145deg, rgba($blue-base, 0.2), rgba($purple-muted, 0.14));
+  box-shadow: 0 8px 16px rgba($black, 0.2);
+
+  svg {
+    font-size: 16px;
+  }
+}
+
+.quote {
+  margin: 20px 0 0;
+  background: linear-gradient(150deg, rgba($navy-850, 0.92), rgba($navy-900, 0.92));
+  border: 1px solid rgba($cyan-base, 0.22);
+  border-left: 3px solid rgba($cyan-base, 0.7);
+  border-radius: 12px;
+  padding: 15px 15px 13px;
+  box-shadow: 0 12px 24px rgba($black, 0.2);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+
+  &:hover {
+    border-color: rgba($cyan-base, 0.45);
+    box-shadow: 0 16px 28px rgba($black, 0.24);
+  }
+
+  p {
+    margin: 0 0 10px;
+    color: rgba($white, 0.92);
+    font-style: italic;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    color: rgba($white, 0.76);
+    font-size: 13px;
+
+    strong {
+      color: $white;
+      font-weight: 600;
+    }
+  }
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: min(420px, 52vh);
+  animation: floatMedia 6.4s ease-in-out infinite;
+}
+
+.caseViz {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.caseVizAura {
+  position: absolute;
+  inset: -25%;
+  background: conic-gradient(
+    from 200deg at 50% 50%,
+    rgba($purple-muted, 0.35),
+    rgba($cyan-base, 0.2),
+    rgba($blue-light, 0.12),
+    rgba($purple-muted, 0.3)
+  );
+  animation: caseAuraSpin 18s linear infinite;
+  filter: blur(36px);
+  opacity: 0.75;
+}
+
+.caseVizGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba($cyan-base, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($purple-muted, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at 50% 50%, $black 22%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, $black 22%, transparent 72%);
+}
+
+.caseVizRings {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.caseVizRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba($cyan-base, 0.15);
+
+  &:nth-child(1) {
+    width: 78%;
+    height: 78%;
+    animation: caseRingPulse 5s ease-in-out infinite;
+  }
+
+  &:nth-child(2) {
+    width: 92%;
+    height: 92%;
+    border-color: rgba($purple-muted, 0.2);
+    animation: caseRingPulse 5s ease-in-out infinite 0.6s;
+  }
+}
+
+.caseVizBars {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78%;
+  height: 38%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(4px, 1.8vw, 10px);
+  z-index: 2;
+}
+
+.caseVizBar {
+  flex: 1;
+  max-width: 22px;
+  min-height: 18%;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(180deg, rgba($cyan-base, 0.95) 0%, rgba($purple-muted, 0.55) 72%, rgba($navy-900, 0.4) 100%);
+  box-shadow:
+    0 0 18px rgba($cyan-base, 0.35),
+    inset 0 1px 0 rgba($white, 0.15);
+  transform-origin: bottom center;
+  animation: caseBarPulse 2.2s ease-in-out infinite alternate;
+}
+
+.caseVizSpark {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 18%;
+  height: 28%;
+  z-index: 2;
+  overflow: visible;
+}
+
+.caseVizSparkPath {
+  fill: none;
+  stroke: rgba($cyan-base, 0.95);
+  stroke-width: 2.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba($cyan-base, 0.5));
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: caseSparkDraw 3.5s ease-in-out infinite;
+}
+
+.caseVizCore {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: clamp(76px, 20vw, 104px);
+  height: clamp(76px, 20vw, 104px);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(155deg, rgba($navy-800, 0.98), rgba($navy-900, 0.99));
+  border: 1px solid rgba($cyan-base, 0.4);
+  color: $cyan-base;
+  font-size: clamp(34px, 9vw, 46px);
+  z-index: 3;
+  box-shadow:
+    0 0 40px rgba($cyan-base, 0.25),
+    0 0 72px rgba($purple-muted, 0.15),
+    inset 0 1px 0 rgba($white, 0.12);
+  animation: caseCoreFloat 4s ease-in-out infinite;
+
+  svg {
+    filter: drop-shadow(0 0 10px rgba($cyan-base, 0.55));
+  }
+}
+
+.caseVizCoreGlow {
+  position: absolute;
+  inset: -40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($cyan-base, 0.35) 0%, transparent 65%);
+  animation: caseGlowPulse 2.8s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.caseVizCoreRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba($purple-muted, 0.45);
+  animation: caseCoreRingSpin 10s linear infinite;
+  pointer-events: none;
+}
+
+.caseVizShimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba($white, 0.06) 48%,
+    rgba($cyan-base, 0.1) 52%,
+    transparent 58%
+  );
+  background-size: 220% 100%;
+  animation: caseShimmer 7s ease-in-out infinite;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.caseVizDots {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba($cyan-base, 0.85);
+    box-shadow: 0 0 12px rgba($cyan-base, 0.6);
+    animation: caseDotFloat 5s ease-in-out infinite;
+
+    &:nth-child(1) {
+      left: 12%;
+      top: 28%;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      right: 16%;
+      top: 38%;
+      animation-delay: 1.2s;
+      background: rgba($purple-muted, 0.9);
+      box-shadow: 0 0 12px rgba($purple-muted, 0.5);
+    }
+
+    &:nth-child(3) {
+      left: 22%;
+      bottom: 26%;
+      animation-delay: 2.1s;
+    }
+  }
+}
+
+@keyframes caseAuraSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes caseRingPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+@keyframes caseBarPulse {
+  0% {
+    transform: scaleY(0.82);
+    filter: brightness(0.95);
+  }
+  100% {
+    transform: scaleY(1);
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes caseSparkDraw {
+  0% {
+    stroke-dashoffset: 320;
+    opacity: 0.5;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -320;
+    opacity: 0.45;
+  }
+}
+
+@keyframes caseCoreFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-4px);
+  }
+}
+
+@keyframes caseGlowPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes caseCoreRingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes caseShimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.35;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.65;
+  }
+}
+
+@keyframes caseDotFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(4px, -8px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatMedia {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caseVizAura,
+  .caseVizGrid,
+  .caseVizRing,
+  .caseVizBar,
+  .caseVizSparkPath,
+  .caseVizCore,
+  .caseVizCoreGlow,
+  .caseVizCoreRing,
+  .caseVizShimmer,
+  .caseVizDots span {
+    animation: none !important;
+  }
+
+  .caseVizSparkPath {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+
+  .caseVizCore {
+    transform: translate(-50%, -50%);
+  }
+
+  .media {
+    animation: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .media {
+    animation: none;
+  }
+}

@@ -1,0 +1,640 @@
+@use "../../styles/settings/colors" as *;
+
+.section {
+  padding: 90px 20px 70px;
+  background: transparent;
+}
+
+.wrapper {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.kicker {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba($blue-base, 0.16), rgba($blue-dark, 0.08));
+  color: $white;
+  border: 1px solid rgba($blue-dark, 0.2);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0 0 12px;
+  color: $white;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 860px;
+  color: rgba($white, 0.82);
+  margin-inline: auto;
+}
+
+.stage {
+  position: relative;
+  min-height: 880px;
+}
+
+.media {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(500px, 56vw);
+  min-height: min(500px, 56vw);
+  border-radius: 20px;
+  overflow: visible;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+
+.mediaGlow {
+  position: absolute;
+  inset: -30%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba($cyan-base, 0.14) 0%,
+    rgba($purple-muted, 0.08) 35%,
+    transparent 65%
+  );
+  animation: mediaGlowPulse 5s ease-in-out infinite;
+}
+
+.complianceViz {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  isolation: isolate;
+}
+
+.vizGlow {
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba($cyan-base, 0.15),
+    rgba($purple-muted, 0.2),
+    rgba($blue-light, 0.1),
+    rgba($cyan-base, 0.15)
+  );
+  animation: vizSpin 14s linear infinite;
+  filter: blur(28px);
+  opacity: 0.85;
+}
+
+.vizHex {
+  position: absolute;
+  inset: 4%;
+  border-radius: 50%;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='none' stroke='%2318fef5' stroke-opacity='0.25' d='M14 0l12.1 7v14L14 28 1.9 21V7z'/%3E%3C/svg%3E");
+  background-size: 28px 49px;
+  animation: vizHexDrift 18s linear infinite;
+  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 72%);
+}
+
+.vizRipples {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.vizRipple {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  border: 1px solid rgba($cyan-base, 0.35);
+  animation: vizRippleExpand 4s ease-out infinite;
+  opacity: 0;
+
+  &:nth-child(2) {
+    animation-delay: 1.35s;
+    border-color: rgba($purple-muted, 0.4);
+  }
+
+  &:nth-child(3) {
+    animation-delay: 2.7s;
+    border-color: rgba($cyan-base, 0.22);
+  }
+}
+
+.vizRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.vizRingA {
+  width: 92%;
+  height: 92%;
+  border-color: rgba($purple-muted, 0.35);
+  border-style: dashed;
+  animation: vizRotateCw 22s linear infinite;
+  box-shadow: 0 0 20px rgba($purple-muted, 0.15);
+}
+
+.vizRingB {
+  width: 76%;
+  height: 76%;
+  border-color: rgba($cyan-base, 0.28);
+  animation: vizRotateCcw 16s linear infinite;
+  box-shadow: inset 0 0 24px rgba($cyan-base, 0.06);
+}
+
+.vizRingC {
+  width: 60%;
+  height: 60%;
+  border-color: rgba($purple-muted, 0.22);
+  border-style: dotted;
+  animation: vizRotateCw 11s linear infinite;
+}
+
+.vizSweep {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg at 50% 50%,
+    transparent 0deg,
+    transparent 285deg,
+    rgba($cyan-base, 0.12) 300deg,
+    rgba($purple-muted, 0.18) 330deg,
+    rgba($cyan-base, 0.08) 360deg
+  );
+  animation: vizSweepSpin 5s linear infinite;
+  opacity: 0.55;
+  mask-image: radial-gradient(circle, transparent 58%, black 62%, transparent 66%);
+  -webkit-mask-image: radial-gradient(circle, transparent 58%, black 62%, transparent 66%);
+}
+
+@keyframes vizSweepSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vizOrbits {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.vizOrbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.vizOrbitA {
+  animation: vizOrbitSpin 10s linear infinite;
+}
+
+.vizOrbitB {
+  animation: vizOrbitSpin 14s linear infinite;
+  animation-delay: -4.6s;
+}
+
+.vizOrbitC {
+  animation: vizOrbitSpin 8s linear infinite;
+  animation-delay: -2.1s;
+}
+
+.vizNode {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, $cyan-base 0%, rgba($cyan-base, 0.2) 100%);
+  box-shadow: 0 0 12px rgba($cyan-base, 0.7), 0 0 24px rgba($purple-muted, 0.4);
+  animation: vizNodePulse 1.8s ease-in-out infinite;
+}
+
+.vizCore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(84px, 21vw, 112px);
+  height: clamp(84px, 21vw, 112px);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, rgba($navy-800, 0.95), rgba($navy-900, 0.98));
+  border: 1px solid rgba($cyan-base, 0.35);
+  color: $cyan-base;
+  font-size: clamp(38px, 9.5vw, 52px);
+  box-shadow:
+    0 0 40px rgba($cyan-base, 0.2),
+    0 0 80px rgba($purple-muted, 0.15),
+    inset 0 1px 0 rgba($white, 0.12);
+  animation: vizCorePulse 3s ease-in-out infinite;
+  z-index: 2;
+
+  svg {
+    filter: drop-shadow(0 0 8px rgba($cyan-base, 0.5));
+  }
+}
+
+.vizCoreRing {
+  position: absolute;
+  inset: -7px;
+  border-radius: 28px;
+  border: 1px solid rgba($purple-muted, 0.45);
+  animation: vizCoreRingSpin 8s linear infinite;
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+.vizScanlines {
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba($cyan-base, 0.03) 3px,
+    rgba($cyan-base, 0.03) 4px
+  );
+  opacity: 0.4;
+  animation: vizScanDrift 6s linear infinite;
+  mask-image: radial-gradient(circle at 50% 50%, black 45%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 45%, transparent 70%);
+  pointer-events: none;
+}
+
+@keyframes mediaGlowPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes vizSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vizHexDrift {
+  to {
+    background-position: 28px 49px;
+  }
+}
+
+@keyframes vizRippleExpand {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes vizRotateCw {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes vizRotateCcw {
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes vizOrbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vizNodePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+@keyframes vizCorePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 36px rgba($cyan-base, 0.18),
+      0 0 72px rgba($purple-muted, 0.12),
+      inset 0 1px 0 rgba($white, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 0 52px rgba($cyan-base, 0.32),
+      0 0 96px rgba($purple-muted, 0.22),
+      inset 0 1px 0 rgba($white, 0.18);
+  }
+}
+
+@keyframes vizCoreRingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vizScanDrift {
+  to {
+    transform: translateY(12px);
+  }
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.grid :global(article) {
+  pointer-events: auto;
+}
+
+.card:nth-child(1) { top: 13%; left: 11%; }
+.card:nth-child(2) { top: 13%; right: 11%; }
+.card:nth-child(3) { top: 41%; left: 7%; }
+.card:nth-child(4) { top: 41%; right: 7%; }
+.card:nth-child(5) { bottom: 14%; left: 13%; }
+.card:nth-child(6) { bottom: 14%; right: 13%; }
+
+.card {
+  position: absolute;
+  width: min(320px, 36vw);
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: start;
+  gap: 12px;
+  background: linear-gradient(145deg, rgba($navy-800, 0.95), rgba($navy-900, 0.96));
+  border: 1px solid rgba($blue-dark, 0.2);
+  border-radius: 14px;
+  padding: 14px 14px;
+  min-height: 0;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba($black, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  animation: cardFloat 6.5s ease-in-out infinite;
+}
+
+.card:nth-child(2n) {
+  animation-delay: 0.8s;
+}
+
+.card:nth-child(3n) {
+  animation-delay: 1.6s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 2.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(6) {
+  animation-delay: 3.2s;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba($cyan-base, 0.24) 0%, rgba($cyan-base, 0) 72%);
+  pointer-events: none;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+  color: $white;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  color: rgba($white, 0.8);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba($cyan-base, 0.45);
+  box-shadow: 0 16px 30px rgba($black, 0.25);
+  animation-play-state: paused;
+}
+
+.cardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: $cyan-base;
+  background: linear-gradient(145deg, rgba($blue-base, 0.28), rgba($purple-muted, 0.2));
+  border: 1px solid rgba($cyan-base, 0.26);
+  animation: pulseGlow 1.75s ease-in-out infinite;
+}
+
+.cardIcon svg {
+  font-size: 18px;
+}
+
+.cardBody {
+  min-width: 0;
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba($cyan-base, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba($cyan-base, 0.02);
+  }
+}
+
+@media (max-width: 1180px) {
+  .stage {
+    min-height: 820px;
+  }
+
+  .media {
+    width: min(460px, 52vw);
+    min-height: min(460px, 52vw);
+  }
+
+  .complianceViz {
+    max-width: 420px;
+  }
+
+  .card {
+    width: min(290px, 38vw);
+  }
+}
+
+@media (max-width: 980px) {
+  .stage {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .media {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(340px, 78vw);
+    min-height: min(340px, 78vw);
+    margin: 0 auto;
+  }
+
+  .complianceViz {
+    max-width: 320px;
+  }
+
+  .grid {
+    position: static;
+    display: grid;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .card {
+    position: static;
+    width: 100%;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardIcon {
+    animation: none !important;
+  }
+
+  .mediaGlow,
+  .vizGlow,
+  .vizHex,
+  .vizRipple,
+  .vizRing,
+  .vizSweep,
+  .vizOrbit,
+  .vizNode,
+  .vizCore,
+  .vizCoreRing,
+  .vizScanlines {
+    animation: none !important;
+  }
+
+  .vizGlow {
+    opacity: 0.5;
+  }
+
+  .vizSweep {
+    opacity: 0.35;
+    transform: rotate(40deg);
+  }
+
+  .vizRipple {
+    opacity: 0;
+    animation: none;
+  }
+
+  .vizCore {
+    box-shadow:
+      0 0 36px rgba($cyan-base, 0.2),
+      0 0 72px rgba($purple-muted, 0.12),
+      inset 0 1px 0 rgba($white, 0.12);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 70px 16px 56px;
+  }
+
+  .media {
+    width: min(260px, 82vw);
+    min-height: min(260px, 82vw);
+    border-radius: 14px;
+  }
+
+  .card {
+    grid-template-columns: 40px 1fr;
+    padding: 12px 10px;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+}

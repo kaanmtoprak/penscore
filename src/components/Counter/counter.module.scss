@@ -1,0 +1,395 @@
+@use "../../styles/settings/colors" as *;
+
+.section {
+  position: relative;
+  padding: clamp(48px, 8vw, 88px) 20px clamp(56px, 9vw, 100px);
+}
+
+.inner {
+  position: relative;
+  width: min(1220px, 100%);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.card {
+  --i: 0;
+  position: relative;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba($cyan-base, 0.45),
+    rgba($purple-muted, 0.35) 45%,
+    rgba($pink-accent, 0.28) 78%,
+    rgba($cyan-base, 0.38)
+  );
+  background-size: 220% 220%;
+  opacity: 0;
+  transform: translateY(32px) scale(0.94);
+  filter: blur(10px);
+  will-change: transform, opacity, filter;
+}
+
+.section.visible .card {
+  animation:
+    cardEnter 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    borderFlow 10s linear infinite;
+  animation-delay: calc(var(--i) * 0.11s), 0s;
+}
+
+.cardInner {
+  position: relative;
+  border-radius: 21px;
+  padding: clamp(22px, 3.2vw, 30px) clamp(16px, 2.2vw, 22px) clamp(20px, 2.8vw, 26px);
+  background:
+    linear-gradient(165deg, rgba($navy-800, 0.97) 0%, rgba($navy-850, 0.98) 48%, rgba($navy-900, 0.99) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba($white, 0.07),
+    0 18px 40px rgba($black, 0.35),
+    0 0 0 1px rgba($cyan-base, 0.06);
+  overflow: hidden;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      125deg,
+      transparent 40%,
+      rgba($white, 0.04) 48%,
+      rgba($cyan-base, 0.07) 50%,
+      rgba($white, 0.03) 52%,
+      transparent 60%
+    );
+    mix-blend-mode: soft-light;
+    animation: sheen 5.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+.iconRail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -58%);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.iconRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba($cyan-base, 0.22);
+  transform-origin: center;
+  animation: ringSpin 14s linear infinite;
+}
+
+.iconRing2 {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba($pink-accent, 0.12);
+  transform-origin: center;
+  animation: ringSpin 11s linear infinite reverse;
+}
+
+.iconWrap {
+  position: relative;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: $cyan-base;
+  border: 1px solid rgba($cyan-base, 0.38);
+  background: linear-gradient(145deg, rgba($cyan-base, 0.14), rgba($purple-muted, 0.08));
+  box-shadow:
+    0 0 24px rgba($cyan-base, 0.15),
+    inset 0 1px 0 rgba($white, 0.12);
+  animation: iconBob 4.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.4s);
+
+  svg {
+    font-size: 22px;
+    filter: drop-shadow(0 0 10px rgba($cyan-base, 0.45));
+  }
+}
+
+.number {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.numberInner {
+  display: inline-block;
+  background: linear-gradient(
+    118deg,
+    $white 0%,
+    rgba($white, 0.95) 35%,
+    rgba($cyan-base, 0.95) 72%,
+    rgba($pink-accent, 0.88) 100%
+  );
+  background-size: 160% 160%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
+}
+
+.section.visible .numberInner {
+  animation:
+    numberPop 0.75s cubic-bezier(0.34, 1.4, 0.64, 1) forwards,
+    gradientShift 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.11s + 0.38s), 0s;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: rgba($white, 0.78);
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.section.visible .label {
+  animation: labelIn 0.55s ease forwards;
+  animation-delay: calc(var(--i) * 0.11s + 0.52s);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+  opacity: 0;
+}
+
+.section.visible .cardFooter {
+  animation: dotsIn 0.5s ease forwards;
+  animation-delay: calc(var(--i) * 0.11s + 0.62s);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba($cyan-base, 0.45);
+  animation: dotPulse 2.4s ease-in-out infinite;
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+    background: rgba($pink-accent, 0.5);
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+    background: rgba($cyan-base, 0.35);
+  }
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes cardEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.94);
+    filter: blur(10px);
+  }
+  70% {
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes sheen {
+  0%,
+  100% {
+    transform: translateX(-30%) skewX(-12deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateX(30%) skewX(-12deg);
+    opacity: 0.65;
+  }
+}
+
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes numberPop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes labelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotsIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .iconRail {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 40px 16px 52px;
+    margin-top: -56px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cardInner {
+    padding: 22px 18px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconRing,
+  .iconRing2,
+  .iconWrap,
+  .cardInner::after,
+  .dot {
+    animation: none !important;
+  }
+
+  .section.visible .card {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .section.visible .numberInner {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section.visible .label,
+  .section.visible .cardFooter {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .card {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .numberInner {
+    opacity: 1;
+    transform: none;
+  }
+
+  .label {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cardFooter {
+    opacity: 1;
+  }
+}

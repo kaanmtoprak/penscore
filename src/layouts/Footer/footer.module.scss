@@ -1,0 +1,301 @@
+@use "../../styles/settings/colors" as *;
+
+.footer {
+  position: relative;
+  padding: 88px 0 32px;
+  border-top: 1px solid rgba($cyan-base, 0.14);
+  background:
+    linear-gradient(115deg, rgba($navy-950, 0.96) 0%, rgba($navy-850, 0.94) 52%, rgba($purple-muted, 0.7) 100%),
+    repeating-linear-gradient(
+      -35deg,
+      rgba($white, 0.02) 0px,
+      rgba($white, 0.02) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.singleFooter {
+  position: relative;
+
+  @media only screen and (max-width: 880px) {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    color: $white;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+
+  p {
+    color: rgba($white, 0.78);
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul li a {
+    color: rgba($white, 0.84);
+    transition: all 0.3s ease 0s;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+
+    &:hover {
+      color: $cyan-base;
+    }
+  }
+}
+
+.brandCol {
+  padding-right: 18px;
+}
+
+.logoText {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: clamp(24px, 2.2vw, 31px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  background: linear-gradient(120deg, $cyan-base 0%, $blue-light 45%, $purple-muted 78%, $white 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 8px 20px rgba($purple-muted, 0.35);
+}
+
+.footerRow {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba($white, 0.12);
+}
+
+.footerCopyright {
+  float: left;
+
+  @media only screen and (max-width: 480px) {
+    display: inline;
+  }
+
+  p {
+    color: rgba($white, 0.72);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+}
+
+.footerMenu {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+
+  @media only screen and (max-width: 480px) {
+    float: left;
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  ul li {
+    float: none;
+  }
+
+  ul li a {
+    color: rgba($white, 0.78);
+    padding: 6px 10px;
+    transition: 0.3s;
+    font-size: 14px;
+    border-radius: 999px;
+    border: 1px solid rgba($white, 0.12);
+    background: rgba($white, 0.03);
+
+    &:hover {
+      color: $cyan-base;
+      border-color: rgba($cyan-base, 0.28);
+      background: rgba($cyan-base, 0.08);
+      text-decoration: none;
+    }
+  }
+}
+
+.socialProfile {
+  margin-top: 12px;
+
+  ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  ul li {
+    float: none;
+  }
+}
+
+.socialLink {
+  text-align: center;
+  border: 1px solid rgba($white, 0.16);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+    filter: brightness(1.08);
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.socialFacebook {
+    background: rgba($blue-facebook, 0.22);
+}
+
+.socialTwitter {
+    background: rgba($blue-social, 0.22);
+}
+
+.socialInstagram {
+    background: rgba($red-social, 0.22);
+}
+
+.socialLinkedin {
+    background: rgba($teal-linkedin, 0.22);
+}
+
+.contactMail {
+  display: inline-block;
+  margin-top: 10px;
+  color: $cyan-base;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.contactMail:hover {
+  color: $white;
+}
+
+@media (max-width: 1200px) {
+  .topGrid {
+    grid-template-columns: 1.2fr repeat(2, minmax(0, 1fr));
+    row-gap: 28px;
+  }
+
+  .footerRow {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 820px) {
+  .footer {
+    padding: 74px 0 26px;
+  }
+
+  .topGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+
+  .footerCopyright,
+  .footerMenu {
+    float: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footerMenu {
+    margin-top: 12px;
+  }
+
+  .footerMenu ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 64px 0 22px;
+  }
+
+  .topGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .singleFooter h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .singleFooter ul li a {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .footerRow {
+    margin-top: 28px;
+    padding-top: 18px;
+  }
+
+  .footerMenu ul {
+    gap: 6px;
+  }
+
+  .footerMenu ul li a {
+    font-size: 13px;
+    padding: 5px 9px;
+  }
+}

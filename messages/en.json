@@ -1,0 +1,430 @@
+{
+  "common": {
+    "backToTop": "Back to top",
+    "carouselPrev": "Previous partners",
+    "carouselNext": "Next partners"
+  },
+  "home": {
+    "hero": {
+      "badge": "Mobile App Security Platform",
+      "headline": "Stop Shipping Apps With Hidden Risks.",
+      "subtext": "PenScore scans your Android and iOS apps with deep static analysis — surfacing vulnerabilities, hardcoded secrets, and compliance gaps before your next release. No source code required.",
+      "ctaPrimary": "Start Free Trial",
+      "ctaSecondary": "See How It Works",
+      "trustedByLabel": "Trusted by security teams at",
+      "trustedByLogos": "Akbank / Garanti BBVA / Papara / Yemeksepeti / Trendyol / n11"
+    },
+    "brands": {
+      "kicker": "Trusted across the industry"
+    },
+    "metrics": {
+      "ariaLabel": "Platform metrics",
+      "stat1": {
+        "value": "2,000+",
+        "label": "Apps Scanned"
+      },
+      "stat2": {
+        "value": "240+",
+        "label": "Security Rules"
+      },
+      "stat3": {
+        "value": "<3 Min",
+        "label": "Average Scan"
+      },
+      "stat4": {
+        "value": "98%",
+        "label": "Detection Rate"
+      }
+    },
+    "features": {
+      "sectionLabel": "Platform Capabilities",
+      "sectionHeadline": "Security Built for Mobile, Not Adapted.",
+      "sectionSubtext": "Deep analysis that reverses your app the way a real attacker would — not just surface-level pattern matching.",
+      "feature1": {
+        "title": "APK & IPA Static Analysis",
+        "desc": "Full DEX decompilation, binary inspection, manifest parsing, and native library scanning. Drop your binary — no source code needed.",
+        "tag": "androguard · lief · jadx"
+      },
+      "feature2": {
+        "title": "PenScore™ Risk Engine",
+        "desc": "Proprietary scoring maps findings to MASVS v2 and OWASP Mobile Top 10, producing a clear 0–100 risk score with per-finding CVSS mapping.",
+        "tag": "MASVS v2 · OWASP M10 · CVSS"
+      },
+      "feature3": {
+        "title": "Secret & Credential Detection",
+        "desc": "Finds API keys, tokens, and private keys buried in binaries or config files before attackers do.",
+        "tag": "CWE-798 · CWE-321"
+      },
+      "feature4": {
+        "title": "CI/CD Integration",
+        "desc": "REST API and webhooks gate every release on PenScore — automatically block builds that fail your security threshold.",
+        "tag": "REST · GitHub Actions · Webhook"
+      },
+      "feature5": {
+        "title": "Compliance Mapping",
+        "desc": "Automatic mapping to KVKK, BDDK, PCI-DSS mobile, and GDPR. Export audit-ready reports your compliance team can submit directly.",
+        "tag": "KVKK · BDDK · PCI-DSS · GDPR"
+      },
+      "feature6": {
+        "title": "Web Dashboard",
+        "desc": "Upload, track scan history, filter by severity, and export PDF/JSON reports. No CLI or setup required.",
+        "tag": "React · REST API"
+      }
+    },
+    "howItWorks": {
+      "sectionLabel": "How It Works",
+      "sectionHeadline": "From Upload to Report in 3 Minutes.",
+      "sectionSubtext": "No setup, no agents, no source code. Drop your binary and get a prioritized, actionable security report.",
+      "step1": {
+        "title": "Upload Your Binary",
+        "desc": "Drag & drop your APK or IPA to the dashboard, or push via REST API directly from your CI pipeline."
+      },
+      "step2": {
+        "title": "Engine Runs 240+ Checks",
+        "desc": "PenScore decompiles, parses, and runs security checks across all MASVS categories in parallel. Average time under 3 minutes."
+      },
+      "step3": {
+        "title": "Risk Score + Prioritized Findings",
+        "desc": "A clear 0–100 PenScore with CVSS mapping, severity breakdown, and per-finding remediation guidance."
+      },
+      "step4": {
+        "title": "Export Audit-Ready Report",
+        "desc": "PDF and JSON exports with full CWE and MASVS references — ready for internal review, BDDK/KVKK submissions, or developer handoff."
+      }
+    },
+    "caseStudy": {
+      "badge": "Case Study",
+      "industry": "Fintech · Istanbul",
+      "headline": "How a Fintech Cut Security Review Time by 80%",
+      "body": "A fast-growing payments company was manually reviewing every APK before each sprint release — taking 3 to 5 days per cycle. After integrating PenScore into their CI/CD pipeline, security reviews became automatic and instant. Zero critical issues have reached production since.",
+      "stat1": "80% Faster Security Review",
+      "stat2": "0 Critical Issues in Production",
+      "stat3": "4 Weeks Saved on BDDK Audit Prep",
+      "link": "Read Full Case Study →",
+      "quote": "\"PenScore found a hardcoded private key in our production binary that had been sitting there for 8 months. The report was ready before our standup ended. We shipped a fix the same day.\"",
+      "quoteAuthorName": "Ahmet K.",
+      "quoteAuthorRole": "Lead Security Engineer",
+      "quoteAuthorSector": "Fintech · Istanbul"
+    },
+    "compliance": {
+      "sectionLabel": "Compliance Coverage",
+      "sectionHeadline": "Built for Regulated Industries.",
+      "sectionSubtext": "PenScore maps every finding to the compliance frameworks your auditors expect — automatically, on every scan.",
+      "badge1": { "name": "BDDK", "desc": "Banking regulation (Turkey)" },
+      "badge2": { "name": "KVKK", "desc": "Personal data protection (Turkey)" },
+      "badge3": { "name": "PCI-DSS", "desc": "Payment card security" },
+      "badge4": { "name": "MASVS v2", "desc": "Mobile App Security Standard" },
+      "badge5": { "name": "OWASP M10", "desc": "Mobile Top 10" },
+      "badge6": { "name": "GDPR", "desc": "EU data regulation" }
+    },
+    "testimonials": {
+      "sectionLabel": "What Our Customers Say",
+      "sectionHeadline": "Trusted by Teams Who Ship Fast and Stay Secure.",
+      "t1": {
+        "text": "\"PenScore found a hardcoded API key in our production binary that had been there for 8 months. The report was ready before our standup ended.\"",
+        "name": "Ahmet K.",
+        "role": "Lead Security Engineer",
+        "sector": "Fintech"
+      },
+      "t2": {
+        "text": "\"We integrated PenScore into our GitHub Actions pipeline. Every PR now gets a risk score — security is no longer a release blocker, it's built in.\"",
+        "name": "Merve Y.",
+        "role": "Mobile Platform Lead",
+        "sector": "E-Commerce"
+      },
+      "t3": {
+        "text": "\"The BDDK compliance report saved us weeks of manual documentation. Our auditor accepted it without a single follow-up question.\"",
+        "name": "Cem Ö.",
+        "role": "CISO",
+        "sector": "Banking"
+      }
+    },
+    "newsletter": {
+      "sectionLabel": "Newsletter",
+      "headline": "Product updates & security insights.",
+      "subtext": "Release notes, new rules, and mobile security trends — monthly, no spam.",
+      "placeholder": "Your email address",
+      "submit": "Subscribe",
+      "hint": "Unsubscribe anytime. We never share your address with third parties."
+    },
+    "ctaBand": {
+      "badge": "Get Started Today",
+      "headline": "Ready to Find What Attackers See in Your App?",
+      "subtext": "Start a free trial or request a live demo. We'll scan your app and walk you through the findings in 30 minutes — no commitment required.",
+      "ctaPrimary": "Start Free Trial",
+      "ctaSecondary": "Request a Demo"
+    }
+  },
+  "pricing": {
+    "pageHeadline": "Simple Pricing, No Surprises.",
+    "pageSubtext": "Cancel anytime. No setup fee. No per-seat nonsense.",
+    "billingToggle": "Monthly / Annual (Save 20%)",
+    "hero": {
+      "badge": "Pricing",
+      "headline": "Simple Pricing, No Surprises.",
+      "subtext": "Transparent tiers for indie developers, security teams, and enterprises. Switch billing anytime — no hidden fees."
+    },
+    "billingMonthly": "Monthly",
+    "billingAnnual": "Annual",
+    "billingSaveHint": "Save 20% with annual billing on Starter & Professional.",
+    "comparison": {
+      "title": "Compare all features",
+      "subtitle": "See what’s included in each plan at a glance.",
+      "colFeature": "Feature",
+      "rows": [
+        {
+          "label": "Scans",
+          "starter": "25 / month",
+          "professional": "Unlimited",
+          "enterprise": "Unlimited"
+        },
+        {
+          "label": "APK & IPA support",
+          "starter": "Included",
+          "professional": "Included",
+          "enterprise": "Included"
+        },
+        {
+          "label": "PenScore™ risk scoring",
+          "starter": "Included",
+          "professional": "Included",
+          "enterprise": "Included"
+        },
+        {
+          "label": "REST API & Webhooks",
+          "starter": "—",
+          "professional": "Included",
+          "enterprise": "Included"
+        },
+        {
+          "label": "MASVS / OWASP mapping",
+          "starter": "—",
+          "professional": "Included",
+          "enterprise": "Included"
+        },
+        {
+          "label": "Team seats",
+          "starter": "1",
+          "professional": "5",
+          "enterprise": "Unlimited"
+        },
+        {
+          "label": "On-premise deployment",
+          "starter": "—",
+          "professional": "—",
+          "enterprise": "Included"
+        },
+        {
+          "label": "Dedicated account manager",
+          "starter": "—",
+          "professional": "—",
+          "enterprise": "Included"
+        }
+      ]
+    },
+    "starter": {
+      "name": "Starter",
+      "priceMonthly": "$199/mo",
+      "priceAnnual": "$159/mo",
+      "desc": "For indie developers and small teams getting started with mobile security.",
+      "features": [
+        "25 scans per month",
+        "APK + IPA support",
+        "PenScore™ risk scoring",
+        "PDF report export",
+        "Email support"
+      ],
+      "cta": "Get Started"
+    },
+    "professional": {
+      "name": "Professional",
+      "badge": "Most Popular",
+      "priceMonthly": "$599/mo",
+      "priceAnnual": "$479/mo",
+      "desc": "For security teams managing multiple apps with CI/CD and compliance needs.",
+      "features": [
+        "Unlimited scans",
+        "APK + IPA support",
+        "PenScore™ risk scoring",
+        "REST API + Webhooks",
+        "MASVS / OWASP mapping",
+        "5 team seats",
+        "Priority support",
+        "PDF + JSON export"
+      ],
+      "cta": "Get Started"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "desc": "For banks, fintechs, and large organizations with on-premise or strict compliance requirements.",
+      "features": [
+        "On-premise deployment",
+        "Custom compliance rules",
+        "BDDK / KVKK reports",
+        "Unlimited team seats",
+        "Dedicated account manager",
+        "SLA guarantee",
+        "Custom integrations",
+        "Security audit support"
+      ],
+      "cta": "Contact Sales"
+    },
+    "faq": {
+      "sectionHeadline": "Frequently Asked Questions",
+      "q1": "Do I need to provide source code?",
+      "a1": "No. PenScore analyzes your compiled binary (APK or IPA) directly. No source code, no credentials, no server access needed.",
+      "q2": "How long does a scan take?",
+      "a2": "Most scans complete in under 3 minutes. Large apps with many native libraries may take up to 5 minutes.",
+      "q3": "Can I integrate PenScore into my CI/CD pipeline?",
+      "a3": "Yes. Professional and Enterprise plans include a REST API and webhook support. You can block builds that fall below your PenScore threshold automatically.",
+      "q4": "Is my APK or IPA stored after scanning?",
+      "a4": "Binaries are deleted from our servers within 24 hours of scan completion. Scan results and reports are retained according to your plan.",
+      "q5": "What compliance frameworks does PenScore cover?",
+      "a5": "PenScore maps findings to BDDK, KVKK, PCI-DSS mobile requirements, MASVS v2, OWASP Mobile Top 10, and GDPR. Enterprise plans support custom compliance rule sets.",
+      "q6": "Can I cancel anytime?",
+      "a6": "Yes. No contracts, no cancellation fees. Cancel from your dashboard at any time."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Our Mission",
+      "headline": "We're Making Mobile Apps Safer for Everyone.",
+      "subtext": "PenScore was built by mobile developers who were frustrated by the lack of accessible, developer-friendly security tooling. We believe every team — not just those with dedicated security budgets — deserves to ship secure apps.",
+      "pill1": "Product",
+      "pill2": "Mission",
+      "cardLabel": "Security-first"
+    },
+    "story": {
+      "sectionHeadline": "Why We Built PenScore",
+      "body": "The idea for PenScore started in 2023 when our founder, working as a senior Android developer at a fintech company, discovered a hardcoded API key in a production binary — one that had been sitting there for over a year. The manual security review process had missed it completely.\n\nExisting tools were either too expensive for small teams, too complex to integrate, or too shallow to catch what mattered. So we built PenScore: a platform that does what a senior security engineer would do, automated and accessible to every developer.\n\nToday PenScore scans thousands of apps every month, helping teams across fintech, banking, e-commerce, and healthcare ship with confidence."
+    },
+    "values": {
+      "sectionHeadline": "What We Stand For",
+      "v1": {
+        "title": "Developer-First",
+        "desc": "Security tooling should fit into developer workflows, not the other way around. PenScore is built to be integrated in minutes, not months."
+      },
+      "v2": {
+        "title": "Accessible Security",
+        "desc": "Enterprise-grade security analysis shouldn't require an enterprise budget. Every plan gives you the same depth of analysis."
+      },
+      "v3": {
+        "title": "Transparency",
+        "desc": "Every finding comes with a clear explanation, CWE/MASVS reference, and remediation guidance. No black boxes."
+      },
+      "v4": {
+        "title": "Continuous Improvement",
+        "desc": "The threat landscape evolves constantly. We ship new detection rules weekly and update our compliance mappings with every regulatory change."
+      }
+    },
+    "team": {
+      "sectionHeadline": "The Team",
+      "sectionSubtext": "A small team of mobile security engineers, developers, and compliance specialists.",
+      "member1": {
+        "name": "Duran Ü.",
+        "role": "Founder & CEO — Senior Android Developer with 10+ years in fintech mobile security."
+      }
+    },
+    "cta": {
+      "headline": "Want to Join Us?",
+      "subtext": "We're a remote-first team always looking for talented engineers and security researchers.",
+      "cta": "View Open Positions"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Contact",
+      "headline": "Let's Talk.",
+      "subtext": "Whether you want to request a demo, ask about pricing, or discuss an enterprise integration — we respond within 1 business day."
+    },
+    "options": {
+      "opt1": {
+        "title": "Request a Demo",
+        "desc": "We'll scan your actual app and walk you through the findings live in 30 minutes."
+      },
+      "opt2": {
+        "title": "Sales & Pricing",
+        "desc": "Questions about plans, enterprise pricing, or custom deployments."
+      },
+      "opt3": {
+        "title": "Technical Support",
+        "desc": "Need help with integration, API, or scan results? Our team is here."
+      },
+      "email": "info@penscore.io"
+    },
+    "form": {
+      "title": "Request a Demo",
+      "subtitle": "We'll get back to you within 1 business day.",
+      "field1": "First Name",
+      "field2": "Last Name",
+      "field3": "Work Email",
+      "field4": "Company",
+      "field5": "Team Size",
+      "field5Options": ["1–5", "6–20", "21–50", "50+"],
+      "field6": "What are you trying to solve?",
+      "field6Placeholder": "Tell us about your current mobile security challenges...",
+      "submit": "Request Demo →",
+      "note": "No spam. Unsubscribe anytime. We never share your data.",
+      "bulletsTitle": "What you get",
+      "bullets": [
+        "Live scan of your actual APK or IPA",
+        "Findings walkthrough with our security engineer",
+        "Compliance gap analysis for your industry",
+        "Sample report yours to keep — no strings attached"
+      ]
+    }
+  },
+  "global": {
+    "logo": "PenScore",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "cta": "Get started now",
+      "ariaMainNav": "Main navigation",
+      "ariaMobileNav": "Mobile navigation",
+      "ariaOpenMenu": "Open menu",
+      "ariaCloseMenu": "Close menu",
+      "ariaCloseOverlay": "Close menu",
+      "ariaLangSelector": "Language selection",
+      "drawerTitle": "Menu",
+      "drawerClose": "Close",
+      "mobileLangSummary": "Language",
+      "platform": "Platform",
+      "solutions": "Solutions",
+      "resources": "Resources",
+      "pricing": "Pricing",
+      "login": "Log in",
+      "requestDemo": "Request Demo",
+      "dropdownPlatform": ["Static Analysis", "PenScore™ Engine", "Integrations", "API Reference"],
+      "dropdownSolutions": ["Fintech & Banking", "Enterprise", "Security Teams", "Healthcare"],
+      "dropdownResources": ["Blog", "Case Studies", "Docs", "Security Research", "Changelog"]
+    },
+    "footer": {
+      "tagline": "Mobile application security platform for fintech, banking, and enterprise teams.",
+      "col1Title": "Platform",
+      "col1": ["Static Analysis", "PenScore™ Engine", "Integrations", "API Reference", "Changelog"],
+      "col2Title": "Solutions",
+      "col2": ["Fintech & Banking", "Enterprise", "Security Teams", "Healthcare"],
+      "col3Title": "Resources",
+      "col3": ["Blog", "Case Studies", "Docs", "Security Research"],
+      "col4Title": "Company",
+      "col4": ["About", "Careers", "Partners", "Contact", "Trust & Security"],
+      "copyright": "© 2025 PenScore. All rights reserved.",
+      "legal": ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+      "contactEmail": "info@penscore.io"
+    }
+  },
+  "notFound": {
+    "badge": "Page not found",
+    "headline": "We can’t find this page.",
+    "subtext": "The link may be broken or the page may have been removed.",
+    "cta": "Back to home",
+    "goBack": "Go back"
+  },
+  "metadata": {
+    "homeTitle": "PenScore",
+    "contactTitle": "Cybal Contact - Cyber Security Next js Template"
+  }
+}

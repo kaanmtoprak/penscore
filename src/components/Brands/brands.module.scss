@@ -1,0 +1,190 @@
+@use "../../styles/settings/colors" as *;
+
+.section {
+  position: relative;
+  margin: clamp(40px, 6vw, 72px) auto clamp(48px, 7vw, 88px);
+  padding: clamp(32px, 4.5vw, 48px) clamp(20px, 3vw, 36px) clamp(28px, 4vw, 40px);
+  max-width: min(1280px, calc(100% - 28px));
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba($cyan-base, 0.22);
+  background:
+    linear-gradient(155deg, rgba($navy-800, 0.94) 0%, rgba($navy-850, 0.97) 45%, rgba($navy-900, 0.98) 100%);
+  box-shadow:
+    0 24px 64px rgba($black, 0.35),
+    0 0 0 1px rgba($white, 0.04) inset;
+  animation: sectionEnter 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes sectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    filter: blur(10px);
+  }
+  60% {
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.swiperShell {
+  position: relative;
+  padding: 8px 0 4px;
+}
+
+.swiper {
+  overflow: visible;
+}
+
+.slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  --stagger: 0;
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    140deg,
+    rgba($cyan-base, 0.35),
+    rgba($purple-muted, 0.25) 50%,
+    rgba($pink-accent, 0.2)
+  );
+  background-size: 200% 200%;
+  animation: cardBorder 8s ease infinite;
+  animation-delay: calc(var(--stagger) * 0.15s);
+}
+
+@keyframes cardBorder {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cardInner {
+  position: relative;
+  z-index: 1;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 16px;
+  border-radius: 17px;
+  background: linear-gradient(165deg, rgba($navy-800, 0.88) 0%, rgba($navy-850, 0.95) 100%);
+  border: 1px solid rgba($white, 0.06);
+  box-shadow: inset 0 1px 0 rgba($white, 0.06);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba($white, 0.06) 48%,
+      rgba($cyan-base, 0.08) 50%,
+      transparent 62%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+}
+
+.card:hover .cardInner {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    inset 0 1px 0 rgba($white, 0.1),
+    0 16px 36px rgba($black, 0.35);
+
+  &::after {
+    opacity: 1;
+    animation: sheenPass 1.8s ease-in-out;
+  }
+}
+
+@keyframes sheenPass {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(40%);
+  }
+}
+
+.logo {
+  width: 118px;
+  max-width: 88%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.12) contrast(1.05);
+  opacity: 0.88;
+  transition:
+    filter 0.45s ease,
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .logo {
+  filter: grayscale(0) brightness(1.05);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .cardInner {
+    min-height: 80px;
+    padding: 14px 12px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .card {
+    animation: none !important;
+  }
+
+  .section {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .card:hover .cardInner {
+    transform: none;
+  }
+
+  .card:hover .logo {
+    transform: none;
+  }
+}

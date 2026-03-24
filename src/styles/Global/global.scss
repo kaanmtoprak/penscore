@@ -1,0 +1,89 @@
+@use "../settings/colors" as *;
+
+html {
+	min-height: 100%;
+	background-color: $navy-950;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: "Exo", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
+	position: relative;
+	min-height: 100vh;
+	min-height: 100dvh;
+	background-color: $navy-950;
+	background-image:
+		radial-gradient(circle at 8% 10%, rgba($blue-base, 0.28), transparent 38%),
+		radial-gradient(circle at 92% 88%, rgba($pink-base, 0.2), transparent 42%),
+		linear-gradient(180deg, $navy-900 0%, $navy-950 100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	letter-spacing: 0;
+	margin-top: 0;
+	font-family: "Exo", sans-serif;
+	color: $white;
+	font-weight: 400;
+}
+
+a {
+	font-family: "Exo", sans-serif;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+a:hover {
+	color: $white;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+::-moz-selection {
+	background: $black;
+	color: $white;
+}
+
+::selection {
+	background: $black;
+	color: $white;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.section-padding {
+	padding: 80px 0;
+}
