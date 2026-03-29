@@ -24,10 +24,10 @@
   padding: 1px;
   background: linear-gradient(
     135deg,
-    rgba($cyan-base, 0.45),
-    rgba($purple-muted, 0.35) 45%,
-    rgba($pink-accent, 0.28) 78%,
-    rgba($cyan-base, 0.38)
+    color-mix(in srgb, var(--theme-cyan) 45%, transparent),
+    color-mix(in srgb, var(--theme-purple-muted) 35%, transparent) 45%,
+    color-mix(in srgb, var(--theme-pink-accent) 28%, transparent) 78%,
+    color-mix(in srgb, var(--theme-cyan) 38%, transparent)
   );
   background-size: 220% 220%;
   opacity: 0;
@@ -48,11 +48,11 @@
   border-radius: 21px;
   padding: clamp(22px, 3.2vw, 30px) clamp(16px, 2.2vw, 22px) clamp(20px, 2.8vw, 26px);
   background:
-    linear-gradient(165deg, rgba($navy-800, 0.97) 0%, rgba($navy-850, 0.98) 48%, rgba($navy-900, 0.99) 100%);
+    linear-gradient(165deg, color-mix(in srgb, var(--theme-navy-800) 97%, transparent) 0%, color-mix(in srgb, var(--theme-navy-850) 98%, transparent) 48%, color-mix(in srgb, var(--theme-navy-900) 99%, transparent) 100%);
   box-shadow:
-    inset 0 1px 0 rgba($white, 0.07),
-    0 18px 40px rgba($black, 0.35),
-    0 0 0 1px rgba($cyan-base, 0.06);
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 7%, transparent),
+    0 18px 40px color-mix(in srgb, var(--theme-shadow) 35%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--theme-cyan) 6%, transparent);
   overflow: hidden;
   text-align: center;
 
@@ -63,9 +63,9 @@
     background: linear-gradient(
       125deg,
       transparent 40%,
-      rgba($white, 0.04) 48%,
-      rgba($cyan-base, 0.07) 50%,
-      rgba($white, 0.03) 52%,
+      color-mix(in srgb, var(--theme-fg) 4%, transparent) 48%,
+      color-mix(in srgb, var(--theme-cyan) 7%, transparent) 50%,
+      color-mix(in srgb, var(--theme-fg) 3%, transparent) 52%,
       transparent 60%
     );
     mix-blend-mode: soft-light;
@@ -89,7 +89,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px dashed rgba($cyan-base, 0.22);
+  border: 1px dashed color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   transform-origin: center;
   animation: ringSpin 14s linear infinite;
 }
@@ -98,7 +98,7 @@
   position: absolute;
   inset: 12px;
   border-radius: 50%;
-  border: 1px solid rgba($pink-accent, 0.12);
+  border: 1px solid color-mix(in srgb, var(--theme-pink-accent) 12%, transparent);
   transform-origin: center;
   animation: ringSpin 11s linear infinite reverse;
 }
@@ -112,18 +112,18 @@
   border-radius: 16px;
   display: grid;
   place-items: center;
-  color: $cyan-base;
-  border: 1px solid rgba($cyan-base, 0.38);
-  background: linear-gradient(145deg, rgba($cyan-base, 0.14), rgba($purple-muted, 0.08));
+  color: var(--theme-cyan);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 38%, transparent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-cyan) 14%, transparent), color-mix(in srgb, var(--theme-purple-muted) 8%, transparent));
   box-shadow:
-    0 0 24px rgba($cyan-base, 0.15),
-    inset 0 1px 0 rgba($white, 0.12);
+    0 0 24px color-mix(in srgb, var(--theme-cyan) 15%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 12%, transparent);
   animation: iconBob 4.2s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.4s);
 
   svg {
     font-size: 22px;
-    filter: drop-shadow(0 0 10px rgba($cyan-base, 0.45));
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--theme-cyan) 45%, transparent));
   }
 }
 
@@ -141,10 +141,10 @@
   display: inline-block;
   background: linear-gradient(
     118deg,
-    $white 0%,
-    rgba($white, 0.95) 35%,
-    rgba($cyan-base, 0.95) 72%,
-    rgba($pink-accent, 0.88) 100%
+    var(--theme-fg) 0%,
+    color-mix(in srgb, var(--theme-fg) 95%, transparent) 35%,
+    color-mix(in srgb, var(--theme-cyan) 95%, transparent) 72%,
+    color-mix(in srgb, var(--theme-pink-accent) 88%, transparent) 100%
   );
   background-size: 160% 160%;
   background-clip: text;
@@ -165,7 +165,7 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  color: rgba($white, 0.78);
+  color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.45;
   font-weight: 500;
@@ -196,17 +196,17 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba($cyan-base, 0.45);
+  background: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
   animation: dotPulse 2.4s ease-in-out infinite;
 
   &:nth-child(2) {
     animation-delay: 0.2s;
-    background: rgba($pink-accent, 0.5);
+    background: color-mix(in srgb, var(--theme-pink-accent) 50%, transparent);
   }
 
   &:nth-child(3) {
     animation-delay: 0.4s;
-    background: rgba($cyan-base, 0.35);
+    background: color-mix(in srgb, var(--theme-cyan) 35%, transparent);
   }
 }
 

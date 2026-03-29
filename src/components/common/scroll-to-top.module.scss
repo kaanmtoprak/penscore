@@ -14,13 +14,13 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  color: $cyan-base;
-  background: linear-gradient(145deg, rgba($navy-800, 0.92), rgba($navy-900, 0.96));
-  border: 1px solid rgba($cyan-base, 0.38);
+  color: var(--theme-cyan);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-navy-800) 92%, transparent), color-mix(in srgb, var(--theme-navy-900) 96%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 38%, transparent);
   box-shadow:
-    0 4px 24px rgba($black, 0.35),
-    0 0 0 1px rgba($white, 0.06) inset,
-    0 0 40px rgba($cyan-base, 0.12);
+    0 4px 24px color-mix(in srgb, var(--theme-shadow) 35%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--theme-fg) 6%, transparent) inset,
+    0 0 40px color-mix(in srgb, var(--theme-cyan) 12%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition:
@@ -35,17 +35,17 @@
 
   &:hover {
     transform: translateY(-3px);
-    border-color: rgba($cyan-base, 0.65);
+    border-color: color-mix(in srgb, var(--theme-cyan) 65%, transparent);
     box-shadow:
-      0 12px 36px rgba($black, 0.4),
-      0 0 0 1px rgba($white, 0.1) inset,
-      0 0 48px rgba($cyan-base, 0.28),
-      0 0 80px rgba($purple-muted, 0.12);
-    color: $white;
+      0 12px 36px color-mix(in srgb, var(--theme-shadow) 40%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--theme-fg) 10%, transparent) inset,
+      0 0 48px color-mix(in srgb, var(--theme-cyan) 28%, transparent),
+      0 0 80px color-mix(in srgb, var(--theme-purple-muted) 12%, transparent);
+    color: var(--theme-fg);
   }
 
   &:focus-visible {
-    outline: 2px solid rgba($cyan-base, 0.7);
+    outline: 2px solid color-mix(in srgb, var(--theme-cyan) 70%, transparent);
     outline-offset: 3px;
   }
 
@@ -63,14 +63,14 @@
 .icon {
   font-size: 22px;
   display: block;
-  filter: drop-shadow(0 0 8px rgba($cyan-base, 0.45));
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--theme-cyan) 45%, transparent));
 }
 
 .ring {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  border: 1px solid rgba($purple-muted, 0.35);
+  border: 1px solid color-mix(in srgb, var(--theme-purple-muted) 35%, transparent);
   opacity: 0.6;
   pointer-events: none;
   animation: ringPulse 2.8s ease-in-out infinite;

@@ -3,13 +3,13 @@
 .footer {
   position: relative;
   padding: 88px 0 32px;
-  border-top: 1px solid rgba($cyan-base, 0.14);
+  border-top: 1px solid color-mix(in srgb, var(--theme-cyan) 14%, transparent);
   background:
-    linear-gradient(115deg, rgba($navy-950, 0.96) 0%, rgba($navy-850, 0.94) 52%, rgba($purple-muted, 0.7) 100%),
+    linear-gradient(115deg, color-mix(in srgb, var(--theme-navy-950) 96%, transparent) 0%, color-mix(in srgb, var(--theme-navy-850) 94%, transparent) 52%, color-mix(in srgb, var(--theme-purple-muted) 70%, transparent) 100%),
     repeating-linear-gradient(
       -35deg,
-      rgba($white, 0.02) 0px,
-      rgba($white, 0.02) 1px,
+      color-mix(in srgb, var(--theme-fg) 2%, transparent) 0px,
+      color-mix(in srgb, var(--theme-fg) 2%, transparent) 1px,
       transparent 1px,
       transparent 14px
     );
@@ -29,7 +29,7 @@
   }
 
   h4 {
-    color: $white;
+    color: var(--theme-fg);
     margin-top: 0;
     margin-bottom: 14px;
     font-weight: 700;
@@ -38,7 +38,7 @@
   }
 
   p {
-    color: rgba($white, 0.78);
+    color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
     margin-bottom: 18px;
     line-height: 1.7;
   }
@@ -50,7 +50,7 @@
   }
 
   ul li a {
-    color: rgba($white, 0.84);
+    color: color-mix(in srgb, var(--theme-fg) 84%, transparent);
     transition: all 0.3s ease 0s;
     line-height: 30px;
     font-size: 15px;
@@ -62,7 +62,7 @@
     padding: 2px 0;
 
     &:hover {
-      color: $cyan-base;
+      color: var(--theme-cyan);
     }
   }
 }
@@ -78,17 +78,17 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1;
-  background: linear-gradient(120deg, $cyan-base 0%, $blue-light 45%, $purple-muted 78%, $white 100%);
+  background: linear-gradient(120deg, var(--theme-cyan) 0%, var(--theme-blue-light) 45%, var(--theme-purple-muted) 78%, var(--theme-fg) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 8px 20px rgba($purple-muted, 0.35);
+  text-shadow: 0 8px 20px color-mix(in srgb, var(--theme-purple-muted) 35%, transparent);
 }
 
 .footerRow {
   margin-top: 44px;
   padding-top: 24px;
-  border-top: 1px solid rgba($white, 0.12);
+  border-top: 1px solid color-mix(in srgb, var(--theme-fg) 12%, transparent);
 }
 
 .footerCopyright {
@@ -99,7 +99,7 @@
   }
 
   p {
-    color: rgba($white, 0.72);
+    color: color-mix(in srgb, var(--theme-fg) 72%, transparent);
     text-align: center;
     text-transform: capitalize;
     font-size: 14px;
@@ -129,18 +129,18 @@
   }
 
   ul li a {
-    color: rgba($white, 0.78);
+    color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
     padding: 6px 10px;
     transition: 0.3s;
     font-size: 14px;
     border-radius: 999px;
-    border: 1px solid rgba($white, 0.12);
-    background: rgba($white, 0.03);
+    border: 1px solid color-mix(in srgb, var(--theme-fg) 12%, transparent);
+    background: color-mix(in srgb, var(--theme-fg) 3%, transparent);
 
     &:hover {
-      color: $cyan-base;
-      border-color: rgba($cyan-base, 0.28);
-      background: rgba($cyan-base, 0.08);
+      color: var(--theme-cyan);
+      border-color: color-mix(in srgb, var(--theme-cyan) 28%, transparent);
+      background: color-mix(in srgb, var(--theme-cyan) 8%, transparent);
       text-decoration: none;
     }
   }
@@ -165,10 +165,10 @@
 
 .socialLink {
   text-align: center;
-  border: 1px solid rgba($white, 0.16);
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 16%, transparent);
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
-  color: $white;
+  color: var(--theme-fg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +178,7 @@
   text-decoration: none;
 
   &:hover {
-    color: $white;
+    color: var(--theme-fg);
     filter: brightness(1.08);
   }
 
@@ -195,32 +195,32 @@
 }
 
 .socialFacebook {
-    background: rgba($blue-facebook, 0.22);
+    background: color-mix(in srgb, var(--theme-blue-facebook) 22%, transparent);
 }
 
 .socialTwitter {
-    background: rgba($blue-social, 0.22);
+    background: color-mix(in srgb, var(--theme-blue-social) 22%, transparent);
 }
 
 .socialInstagram {
-    background: rgba($red-social, 0.22);
+    background: color-mix(in srgb, var(--theme-red-social) 22%, transparent);
 }
 
 .socialLinkedin {
-    background: rgba($teal-linkedin, 0.22);
+    background: color-mix(in srgb, var(--theme-teal-linkedin) 22%, transparent);
 }
 
 .contactMail {
   display: inline-block;
   margin-top: 10px;
-  color: $cyan-base;
+  color: var(--theme-cyan);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
 }
 
 .contactMail:hover {
-  color: $white;
+  color: var(--theme-fg);
 }
 
 @media (max-width: 1200px) {

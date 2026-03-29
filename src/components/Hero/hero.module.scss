@@ -1,5 +1,3 @@
-@use "../../styles/settings/colors" as *;
-
 .hero {
   position: relative;
   isolation: isolate;
@@ -16,7 +14,7 @@
   z-index: 0;
   isolation: isolate;
   pointer-events: none;
-  background-color: $navy-950;
+  background-color: var(--theme-navy-950);
 }
 
 .bgGrid {
@@ -24,14 +22,14 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.38;
+  opacity: 0.2;
   background-image:
-    linear-gradient(rgba($cyan-base, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($purple-muted, 0.11) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--theme-cyan) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-purple-muted) 11%, transparent) 1px, transparent 1px);
   background-size: 44px 44px;
   background-position: center top;
-  mask-image: radial-gradient(ellipse 100% 90% at 50% 45%, $black 15%, $black 70%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 100% 90% at 50% 45%, $black 15%, $black 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 100% 90% at 50% 45%, #000 15%, #000 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 90% at 50% 45%, #000 15%, #000 70%, transparent 100%);
 }
 
 .glassVeil {
@@ -40,73 +38,22 @@
   z-index: 2;
   pointer-events: none;
   overflow: hidden;
-  border: 1px solid rgba($white, 0.08);
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 8%, transparent);
   background:
-    radial-gradient(ellipse 120% 85% at 22% 18%, rgba($purple-muted, 0.14), transparent 52%),
-    radial-gradient(ellipse 95% 75% at 88% 78%, rgba($cyan-base, 0.1), transparent 50%),
-    radial-gradient(ellipse 80% 55% at 48% 45%, rgba($purple-muted, 0.04), transparent 55%),
+    radial-gradient(ellipse 120% 85% at 22% 18%, color-mix(in srgb, var(--theme-purple-muted) 16%, transparent), transparent 52%),
+    radial-gradient(ellipse 95% 75% at 88% 78%, color-mix(in srgb, var(--theme-cyan) 12%, transparent), transparent 50%),
+    radial-gradient(ellipse 80% 55% at 48% 45%, color-mix(in srgb, var(--theme-purple-muted) 6%, transparent), transparent 55%),
     linear-gradient(
       158deg,
-      rgba($purple-muted, 0.07) 0%,
-      rgba($navy-950, 0.01) 42%,
-      rgba($cyan-base, 0.05) 100%
+      color-mix(in srgb, var(--theme-purple-muted) 9%, transparent) 0%,
+      color-mix(in srgb, var(--theme-navy-950) 2%, transparent) 42%,
+      color-mix(in srgb, var(--theme-cyan) 7%, transparent) 100%
     );
-  backdrop-filter: blur(4px) saturate(1.15);
-  -webkit-backdrop-filter: blur(4px) saturate(1.15);
   box-shadow:
-    inset 0 1px 0 rgba($white, 0.1),
-    inset 0 0 120px rgba($purple-muted, 0.05),
-    0 0 90px rgba($cyan-base, 0.1),
-    0 0 140px rgba($purple-muted, 0.07);
-  animation: glassGlowPulse 7s ease-in-out infinite;
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: -30% -40%;
-    background: linear-gradient(
-      108deg,
-      transparent 38%,
-      rgba($white, 0.07) 48%,
-      rgba($cyan-base, 0.14) 50%,
-      rgba($purple-muted, 0.1) 52%,
-      transparent 62%
-    );
-    mix-blend-mode: soft-light;
-    animation: glassShimmer 14s ease-in-out infinite;
-  }
-}
-
-@keyframes glassGlowPulse {
-  0%,
-  100% {
-    opacity: 0.94;
-    box-shadow:
-      inset 0 1px 0 rgba($white, 0.09),
-      inset 0 0 100px rgba($purple-muted, 0.04),
-      0 0 70px rgba($cyan-base, 0.08),
-      0 0 110px rgba($purple-muted, 0.05);
-  }
-  50% {
-    opacity: 1;
-    box-shadow:
-      inset 0 1px 0 rgba($white, 0.12),
-      inset 0 0 140px rgba($purple-muted, 0.08),
-      0 0 110px rgba($cyan-base, 0.16),
-      0 0 180px rgba($purple-muted, 0.12);
-  }
-}
-
-@keyframes glassShimmer {
-  0%,
-  100% {
-    transform: translateX(-12%) skewX(-4deg);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translateX(12%) skewX(-4deg);
-    opacity: 0.75;
-  }
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 10%, transparent),
+    inset 0 0 88px color-mix(in srgb, var(--theme-purple-muted) 6%, transparent),
+    0 0 72px color-mix(in srgb, var(--theme-cyan) 8%, transparent),
+    0 0 110px color-mix(in srgb, var(--theme-purple-muted) 7%, transparent);
 }
 
 .radarScope {
@@ -115,33 +62,28 @@
   top: 44%;
   width: min(580px, 82vw);
   height: min(580px, 82vw);
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
   z-index: 4;
   isolation: isolate;
   border-radius: 50%;
   overflow: visible;
-  filter: drop-shadow(0 0 26px rgba($purple-muted, 0.38)) drop-shadow(0 0 56px rgba($purple-muted, 0.22))
-    drop-shadow(0 0 100px rgba($purple-muted, 0.1));
+  contain: layout paint;
 }
 
 .radarFace {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba($purple-muted, 0.48);
+  border: 1px solid color-mix(in srgb, var(--theme-purple-muted) 48%, transparent);
   box-shadow:
-    inset 0 0 0 1px rgba($cyan-base, 0.1),
-    inset 0 0 80px rgba($purple-muted, 0.1),
-    inset 0 0 32px rgba($black, 0.22),
-    0 0 32px rgba($purple-muted, 0.22),
-    0 0 56px rgba($purple-muted, 0.32),
-    0 0 92px rgba($purple-muted, 0.18);
-  background-color: rgba($navy-950, 0.22);
+    inset 0 0 0 1px color-mix(in srgb, var(--theme-cyan) 10%, transparent),
+    inset 0 0 48px color-mix(in srgb, var(--theme-purple-muted) 8%, transparent),
+    0 0 40px color-mix(in srgb, var(--theme-purple-muted) 20%, transparent);
+  background-color: color-mix(in srgb, var(--theme-navy-950) 22%, transparent);
   background-image:
-    radial-gradient(circle at 50% 50%, transparent 0%, transparent 24.5%, rgba($purple-muted, 0.2) 24.9%, transparent 25.4%),
-    radial-gradient(circle at 50% 50%, transparent 0%, transparent 49.5%, rgba($cyan-base, 0.1) 49.9%, transparent 50.4%),
-    radial-gradient(circle at 50% 50%, transparent 0%, transparent 74.5%, rgba($purple-muted, 0.32) 74.85%, transparent 75.45%);
+    radial-gradient(circle at 50% 50%, transparent 0%, transparent 24.5%, color-mix(in srgb, var(--theme-purple-muted) 20%, transparent) 24.9%, transparent 25.4%),
+    radial-gradient(circle at 50% 50%, transparent 0%, transparent 74.5%, color-mix(in srgb, var(--theme-purple-muted) 30%, transparent) 74.85%, transparent 75.45%);
   opacity: 0.9;
 }
 
@@ -151,10 +93,10 @@
   border-radius: 50%;
   background: repeating-conic-gradient(
     from 0deg at 50% 50%,
-    rgba($purple-muted, 0.2) 0deg 0.42deg,
-    transparent 0.42deg 30deg
+    color-mix(in srgb, var(--theme-purple-muted) 16%, transparent) 0deg 0.45deg,
+    transparent 0.45deg 90deg
   );
-  opacity: 0.44;
+  opacity: 0.28;
   clip-path: circle(50% at 50% 50%);
 }
 
@@ -166,11 +108,9 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba($cyan-base, 0.95), rgba($purple-muted, 0.95));
-  box-shadow:
-    0 0 6px rgba($cyan-base, 0.45),
-    0 0 10px rgba($purple-muted, 0.5);
-  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-cyan) 95%, transparent), color-mix(in srgb, var(--theme-purple-muted) 95%, transparent));
+  box-shadow: 0 0 6px color-mix(in srgb, var(--theme-cyan) 28%, transparent);
+  transform: translate3d(-50%, -50%, 0);
   animation: radarBlipPulse var(--blip-duration, 2.4s) ease-in-out infinite;
   animation-delay: var(--blip-delay, 0s);
   opacity: 0.52;
@@ -178,60 +118,66 @@
   z-index: 2;
 }
 
-.radarPing {
-  position: absolute;
-  inset: 6%;
-  border-radius: 50%;
-  border: 1px solid rgba($purple-muted, 0.35);
-  box-shadow: 0 0 12px rgba($purple-muted, 0.16);
-  animation: radarPing 8s ease-out infinite;
-  pointer-events: none;
-  opacity: 0;
-}
 .radarSweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.radarSweepInner {
   position: absolute;
   inset: 0;
   border-radius: 50%;
   background: conic-gradient(
     from -90deg at 50% 50%,
     transparent 0deg,
-    transparent 300deg,
-    rgba($purple-muted, 0.09) 300deg,
-    rgba($cyan-base, 0.18) 330deg,
-    rgba($purple-muted, 0.12) 348deg,
-    rgba($cyan-base, 0.07) 360deg
+    transparent 268deg,
+    color-mix(in srgb, var(--theme-purple-muted) 7%, transparent) 276deg,
+    color-mix(in srgb, var(--theme-cyan) 11%, transparent) 282deg,
+    color-mix(in srgb, var(--theme-purple-muted) 5%, transparent) 288deg,
+    transparent 294deg,
+    transparent 360deg
   );
-  animation: radarRotate 10s linear infinite;
-  opacity: 0.62;
-  clip-path: circle(50% at 50% 50%);
-  z-index: 1;
+  opacity: 0.3;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  animation: radarSweepRotate 68s linear infinite;
+}
+
+@keyframes radarSweepRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes radarBlipPulse {
   0%,
   100% {
-    opacity: 0.2;
-    transform: translate(-50%, -50%) scale(0.8);
-    box-shadow:
-      0 0 4px rgba($purple-muted, 0.4),
-      0 0 6px rgba($cyan-base, 0.25);
+    opacity: 0.22;
   }
-  35% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 1px rgba($purple-muted, 0.45);
+  50% {
+    opacity: 0.72;
   }
-  55% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.25);
-    box-shadow:
-      0 0 10px rgba($cyan-base, 0.55),
-      0 0 20px rgba($purple-muted, 0.45);
-  }
-  70% {
-    opacity: 0.65;
-    transform: translate(-50%, -50%) scale(1.05);
-  }
+}
+
+.heroRadarPaused .radarBlip {
+  animation-play-state: paused !important;
+}
+
+.heroRadarPaused .radarSweepInner {
+  animation-play-state: paused !important;
+}
+
+.heroRadarPaused .headlineText,
+.heroRadarPaused .badge::after {
+  animation-play-state: paused !important;
 }
 
 .inner {
@@ -272,16 +218,16 @@
   margin-bottom: 14px;
   padding: 10px 18px;
   border-radius: 999px;
-  border: 1px solid rgba($purple-muted, 0.45);
-  background: linear-gradient(135deg, rgba($purple-muted, 0.18), rgba($cyan-base, 0.08));
-  color: rgba($cyan-base, 0.95);
+  border: 1px solid color-mix(in srgb, var(--theme-purple-muted) 45%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-purple-muted) 18%, transparent), color-mix(in srgb, var(--theme-cyan) 8%, transparent));
+  color: color-mix(in srgb, var(--theme-cyan) 95%, transparent);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow:
-    0 0 28px rgba($purple-muted, 0.2),
-    0 0 20px rgba($cyan-base, 0.08);
+    0 0 28px color-mix(in srgb, var(--theme-purple-muted) 20%, transparent),
+    0 0 20px color-mix(in srgb, var(--theme-cyan) 8%, transparent);
   position: relative;
   overflow: hidden;
 
@@ -292,7 +238,7 @@
     background: linear-gradient(
       105deg,
       transparent 0%,
-      rgba($white, 0.08) 45%,
+      color-mix(in srgb, var(--theme-fg) 8%, transparent) 45%,
       transparent 70%
     );
     transform: translateX(-100%);
@@ -313,12 +259,12 @@
   display: inline;
   background: linear-gradient(
     118deg,
-    $white 0%,
-    rgba($white, 0.92) 28%,
-    rgba($purple-muted, 0.92) 42%,
-    rgba($cyan-base, 0.88) 58%,
-    $white 72%,
-    rgba($purple-muted, 0.9) 100%
+    var(--theme-fg) 0%,
+    color-mix(in srgb, var(--theme-fg) 92%, transparent) 28%,
+    color-mix(in srgb, var(--theme-purple-muted) 92%, transparent) 42%,
+    color-mix(in srgb, var(--theme-cyan) 88%, transparent) 58%,
+    var(--theme-fg) 72%,
+    color-mix(in srgb, var(--theme-purple-muted) 90%, transparent) 100%
   );
   background-size: 240% 220%;
   -webkit-background-clip: text;
@@ -330,7 +276,7 @@
 .sub {
   font-size: clamp(15px, 1.65vw, 18px);
   line-height: 1.75;
-  color: rgba($white, 0.78);
+  color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
   margin: 0;
   max-width: 640px;
 }
@@ -349,15 +295,15 @@
   text-transform: none !important;
   letter-spacing: 0.02em !important;
   box-shadow:
-    0 12px 40px rgba($purple-muted, 0.2),
-    0 8px 28px rgba($cyan-base, 0.1);
+    0 12px 40px color-mix(in srgb, var(--theme-purple-muted) 20%, transparent),
+    0 8px 28px color-mix(in srgb, var(--theme-cyan) 10%, transparent);
 
   &::before {
     content: "";
     position: absolute;
     inset: -2px;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba($cyan-base, 0.5), rgba($purple-muted, 0.35));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--theme-cyan) 50%, transparent), color-mix(in srgb, var(--theme-purple-muted) 35%, transparent));
     opacity: 0;
     z-index: -1;
     transition: opacity 0.2s ease;
@@ -424,29 +370,6 @@
   }
 }
 
-@keyframes radarRotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes radarPing {
-  0% {
-    transform: scale(0.18);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
 @keyframes headlineShift {
   0%,
   100% {
@@ -477,51 +400,35 @@
   .actions {
     margin-top: 22px;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: stretch;
+    gap: 12px;
+    width: 100%;
   }
 
   .ctaPrimary,
   .ctaSecondary {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0;
+    box-sizing: border-box;
+    text-align: center;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glassVeil {
-    animation: none;
-    opacity: 0.96;
-    box-shadow:
-      inset 0 1px 0 rgba($white, 0.09),
-      inset 0 0 100px rgba($purple-muted, 0.05),
-      0 0 80px rgba($cyan-base, 0.1),
-      0 0 120px rgba($purple-muted, 0.06);
-  }
-
-  .glassVeil::after {
-    animation: none;
-    opacity: 0.45;
-    transform: none;
-  }
-
-  .radarSweep,
-  .radarPing,
   .radarBlip {
     animation: none;
-  }
-
-  .radarSweep {
-    opacity: 0.28;
-    transform: rotate(45deg);
-  }
-
-  .radarPing {
-    opacity: 0;
-  }
-
-  .radarBlip {
     opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .radarSweepInner {
+    animation: none;
   }
 
   .headlineText {

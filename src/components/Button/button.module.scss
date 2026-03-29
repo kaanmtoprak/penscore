@@ -3,20 +3,20 @@
 .primary {
   background-image: -webkit-linear-gradient(
     to right,
-    $blue-legacy 0%,
-    $pink-hot 51%,
-    $pink-hot 100%
+    var(--theme-blue-legacy) 0%,
+    var(--theme-pink-hot) 51%,
+    var(--theme-pink-hot) 100%
   );
   background-image: linear-gradient(
     to right,
-    $blue-legacy 0%,
-    $pink-hot 51%,
-    $pink-hot 100%
+    var(--theme-blue-legacy) 0%,
+    var(--theme-pink-hot) 51%,
+    var(--theme-pink-hot) 100%
   );
   border-radius: 3px;
   background-size: 200% auto;
   border-style: none;
-  color: $white;
+  color: var(--theme-fg);
   font-weight: 600;
   padding: 14px 33px;
   text-transform: uppercase;
@@ -33,7 +33,7 @@
 
   &:hover {
     background-position: right center;
-    color: $white;
+    color: var(--theme-fg);
   }
 }
 
@@ -45,17 +45,17 @@
 }
 
 .outline {
-  border: 1px solid $cyan-base;
+  border: 1px solid var(--theme-cyan);
   padding: 10px 30px;
   border-radius: 2px;
-  color: $cyan-base;
+  color: var(--theme-cyan);
   margin-left: 20px;
   transition: 0.3s;
   display: inline-block;
 
   &:hover {
-    background: $cyan-base;
-    color: $black;
+    background: var(--theme-cyan);
+    color: var(--theme-on-accent);
   }
 }
 
@@ -66,7 +66,7 @@
 }
 
 .blog {
-  color: $cyan-base;
+  color: var(--theme-cyan);
   display: inline-block;
 
   i {
@@ -75,9 +75,9 @@
 }
 
 .subscribe {
-  background-color: $cyan-base;
+  background-color: var(--theme-cyan);
   border-radius: 100px;
-  color: $black;
+  color: var(--theme-on-accent);
   cursor: pointer;
   display: block;
   font-size: 22px;
@@ -89,7 +89,7 @@
   border: none;
 
   &:hover i {
-    color: $black;
+    color: var(--theme-on-accent);
   }
 }
 
@@ -104,9 +104,9 @@
   position: relative;
 
   i {
-    background: $cyan-base;
-    border: 2px solid $cyan-base;
-    color: $black;
+    background: var(--theme-cyan);
+    border: 2px solid var(--theme-cyan);
+    color: var(--theme-on-accent);
     width: 60px;
     height: 60px;
     line-height: 56px;
@@ -120,8 +120,8 @@
 
   &:hover i {
     background: none;
-    color: $cyan-base;
-    border: 2px solid $cyan-base;
+    color: var(--theme-cyan);
+    border: 2px solid var(--theme-cyan);
   }
 }
 
@@ -133,7 +133,7 @@
 
 .videoTitle {
   font-weight: 600;
-  color: $white;
+  color: var(--theme-fg);
   text-transform: uppercase;
   font-size: 16px;
 }

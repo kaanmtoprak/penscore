@@ -11,8 +11,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 14% 18%, rgba($cyan-base, 0.14), transparent 34%),
-    radial-gradient(circle at 84% 76%, rgba($purple-muted, 0.16), transparent 36%);
+    radial-gradient(circle at 14% 18%, color-mix(in srgb, var(--theme-cyan) 14%, transparent), transparent 34%),
+    radial-gradient(circle at 84% 76%, color-mix(in srgb, var(--theme-purple-muted) 16%, transparent), transparent 36%);
   animation: ambientShift 14s ease-in-out infinite alternate;
   z-index: -1;
 }
@@ -25,7 +25,7 @@
   right: -120px;
   top: 20%;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba($blue-base, 0.14), rgba($blue-base, 0));
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-blue-base) 14%, transparent), color-mix(in srgb, var(--theme-blue-base) 0%, transparent));
   filter: blur(4px);
   pointer-events: none;
   animation: floatOrb 10s ease-in-out infinite;
@@ -44,14 +44,14 @@
 
   h2 {
     margin: 10px 0 10px;
-    color: $white;
+    color: var(--theme-fg);
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.15;
   }
 
   p {
     margin: 0;
-    color: rgba($white, 0.72);
+    color: color-mix(in srgb, var(--theme-fg) 72%, transparent);
     font-size: 17px;
     line-height: 1.7;
   }
@@ -61,13 +61,13 @@
   display: inline-block;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba($cyan-base, 0.35);
-  color: $cyan-base;
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 35%, transparent);
+  color: var(--theme-cyan);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: rgba($cyan-base, 0.06);
+  background: color-mix(in srgb, var(--theme-cyan) 6%, transparent);
 }
 
 .grid {
@@ -83,9 +83,9 @@
   min-height: 100%;
   padding: 28px 22px 24px;
   border-radius: 16px;
-  border: 1px solid rgba($white, 0.08);
-  background: linear-gradient(180deg, rgba($navy-800, 0.86), rgba($navy-850, 0.94));
-  box-shadow: 0 20px 40px rgba($black, 0.28);
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 8%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--theme-navy-800) 86%, transparent), color-mix(in srgb, var(--theme-navy-850) 94%, transparent));
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--theme-shadow) 28%, transparent);
   overflow: hidden;
   transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 }
@@ -98,14 +98,14 @@
   right: -52px;
   bottom: -52px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba($cyan-base, 0.16), rgba($cyan-base, 0));
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 16%, transparent), color-mix(in srgb, var(--theme-cyan) 0%, transparent));
   pointer-events: none;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba($cyan-base, 0.32);
-  box-shadow: 0 24px 44px rgba($black, 0.34);
+  border-color: color-mix(in srgb, var(--theme-cyan) 32%, transparent);
+  box-shadow: 0 24px 44px color-mix(in srgb, var(--theme-shadow) 34%, transparent);
 }
 
 .card:nth-child(2n) {
@@ -119,11 +119,11 @@
 
 .cardFeatured {
   transform: translateY(-8px);
-  border-color: rgba($cyan-base, 0.45);
+  border-color: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
   background:
-    linear-gradient(160deg, rgba($cyan-base, 0.18), transparent 35%),
-    linear-gradient(180deg, rgba($navy-800, 0.95), rgba($navy-850, 0.98));
-  box-shadow: 0 28px 50px rgba($cyan-base, 0.16);
+    linear-gradient(160deg, color-mix(in srgb, var(--theme-cyan) 18%, transparent), transparent 35%),
+    linear-gradient(180deg, color-mix(in srgb, var(--theme-navy-800) 95%, transparent), color-mix(in srgb, var(--theme-navy-850) 98%, transparent));
+  box-shadow: 0 28px 50px color-mix(in srgb, var(--theme-cyan) 16%, transparent);
 }
 
 .cardTop {
@@ -134,7 +134,7 @@
 
   h3 {
     margin: 0;
-    color: $white;
+    color: var(--theme-fg);
     font-size: 24px;
     font-weight: 700;
   }
@@ -146,16 +146,16 @@
   border-radius: 12px;
   display: grid;
   place-items: center;
-  color: $cyan-base;
-  background: rgba($white, 0.04);
-  border: 1px solid rgba($cyan-base, 0.25);
+  color: var(--theme-cyan);
+  background: color-mix(in srgb, var(--theme-fg) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 25%, transparent);
   font-size: 22px;
   transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
 
 .card:hover .icon {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 20px rgba($black, 0.22);
+  box-shadow: 0 10px 20px color-mix(in srgb, var(--theme-shadow) 22%, transparent);
 }
 
 .badge {
@@ -166,13 +166,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: $white;
-  background: linear-gradient(135deg, $pink-base, $blue-base);
+  color: var(--theme-fg);
+  background: linear-gradient(135deg, var(--theme-pink-base), var(--theme-blue-base));
 }
 
 .desc {
   margin: 0 0 18px;
-  color: rgba($white, 0.72);
+  color: color-mix(in srgb, var(--theme-fg) 72%, transparent);
   line-height: 1.65;
   font-size: 15px;
 }
@@ -182,7 +182,7 @@
 }
 
 .amount {
-  color: $white;
+  color: var(--theme-fg);
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 800;
   line-height: 1.1;
@@ -200,13 +200,13 @@
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  color: rgba($white, 0.9);
+  color: color-mix(in srgb, var(--theme-fg) 90%, transparent);
   line-height: 1.45;
   font-size: 14px;
 }
 
 .featureList li svg {
-  color: $cyan-base;
+  color: var(--theme-cyan);
   margin-top: 3px;
   flex-shrink: 0;
 }
@@ -227,7 +227,7 @@
   width: 38%;
   height: 280%;
   transform: rotate(24deg);
-  background: linear-gradient(90deg, rgba($white, 0), rgba($white, 0.28), rgba($white, 0));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--theme-fg) 0%, transparent), color-mix(in srgb, var(--theme-fg) 28%, transparent), color-mix(in srgb, var(--theme-fg) 0%, transparent));
   transition: transform 0.6s ease;
   pointer-events: none;
 }
@@ -286,7 +286,7 @@
 .sectionBlend .card {
   background: transparent;
   box-shadow: none;
-  border-color: rgba($cyan-base, 0.22);
+  border-color: color-mix(in srgb, var(--theme-cyan) 22%, transparent);
 }
 
 .sectionBlend .card::after {
@@ -295,7 +295,7 @@
 
 .sectionBlend .card:hover {
   box-shadow: none;
-  border-color: rgba($cyan-base, 0.42);
+  border-color: color-mix(in srgb, var(--theme-cyan) 42%, transparent);
 }
 
 .sectionBlend .card:nth-child(2n),
@@ -306,16 +306,16 @@
 .sectionBlend .cardFeatured {
   transform: translateY(-4px);
   background: transparent;
-  border-color: rgba($cyan-base, 0.38);
+  border-color: color-mix(in srgb, var(--theme-cyan) 38%, transparent);
   box-shadow: none;
 }
 
 .sectionBlend .cardFeatured:hover {
-  border-color: rgba($cyan-base, 0.55);
+  border-color: color-mix(in srgb, var(--theme-cyan) 55%, transparent);
 }
 
 .sectionBlend .icon {
-  background: rgba($cyan-base, 0.06);
+  background: color-mix(in srgb, var(--theme-cyan) 6%, transparent);
 }
 
 .sectionBlend.pricingHome {

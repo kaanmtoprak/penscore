@@ -17,11 +17,11 @@
   border-radius: 50%;
   background: conic-gradient(
     from 45deg at 50% 50%,
-    rgba($purple-muted, 0.35),
-    rgba($cyan-base, 0.18),
-    rgba($blue-light, 0.12),
-    rgba($purple-muted, 0.28),
-    rgba($cyan-base, 0.15)
+    color-mix(in srgb, var(--theme-purple-muted) 35%, transparent),
+    color-mix(in srgb, var(--theme-cyan) 18%, transparent),
+    color-mix(in srgb, var(--theme-blue-light) 12%, transparent),
+    color-mix(in srgb, var(--theme-purple-muted) 28%, transparent),
+    color-mix(in srgb, var(--theme-cyan) 15%, transparent)
   );
   animation: auraSpin 16s linear infinite;
   filter: blur(32px);
@@ -33,11 +33,11 @@
   inset: 0;
   opacity: 0.28;
   background-image:
-    linear-gradient(rgba($cyan-base, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($purple-muted, 0.09) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--theme-cyan) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-purple-muted) 9%, transparent) 1px, transparent 1px);
   background-size: 20px 20px;
-  mask-image: radial-gradient(circle at 50% 50%, $black 25%, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, $black 25%, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 25%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 25%, transparent 70%);
   animation: gridDrift 22s linear infinite;
 }
 
@@ -56,7 +56,7 @@
   left: 50%;
   top: 50%;
   border-radius: 50%;
-  border: 1px solid rgba($cyan-base, 0.2);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 20%, transparent);
 }
 
 .ringA {
@@ -69,7 +69,7 @@
 .ringB {
   width: 72%;
   height: 72%;
-  border-color: rgba($purple-muted, 0.28);
+  border-color: color-mix(in srgb, var(--theme-purple-muted) 28%, transparent);
   animation: ringCcw 18s linear infinite;
 }
 
@@ -77,7 +77,7 @@
   width: 56%;
   height: 56%;
   border-style: dotted;
-  border-color: rgba($cyan-base, 0.18);
+  border-color: color-mix(in srgb, var(--theme-cyan) 18%, transparent);
   animation: ringCw 11s linear infinite;
 }
 
@@ -94,13 +94,13 @@
   width: 45%;
   height: 45%;
   border-radius: 50%;
-  border: 1px solid rgba($cyan-base, 0.35);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 35%, transparent);
   animation: rippleOut 3.8s ease-out infinite;
   opacity: 0;
 
   &:nth-child(2) {
     animation-delay: 1.25s;
-    border-color: rgba($purple-muted, 0.4);
+    border-color: color-mix(in srgb, var(--theme-purple-muted) 40%, transparent);
   }
 
   &:nth-child(3) {
@@ -117,9 +117,9 @@
     from -90deg at 50% 50%,
     transparent 0deg,
     transparent 270deg,
-    rgba($cyan-base, 0.12) 300deg,
-    rgba($purple-muted, 0.1) 330deg,
-    rgba($cyan-base, 0.06) 360deg
+    color-mix(in srgb, var(--theme-cyan) 12%, transparent) 300deg,
+    color-mix(in srgb, var(--theme-purple-muted) 10%, transparent) 330deg,
+    color-mix(in srgb, var(--theme-cyan) 6%, transparent) 360deg
   );
   animation: sweepSpin 9s linear infinite;
   opacity: 0.5;
@@ -152,15 +152,15 @@
   height: 9px;
   margin: -4.5px 0 0 -4.5px;
   border-radius: 50%;
-  background: radial-gradient(circle, $cyan-base, rgba($cyan-base, 0.2));
-  box-shadow: 0 0 14px rgba($cyan-base, 0.65);
+  background: radial-gradient(circle, var(--theme-cyan), color-mix(in srgb, var(--theme-cyan) 20%, transparent));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--theme-cyan) 65%, transparent);
   animation: nodePulse 1.6s ease-in-out infinite;
 }
 
 .nodeAlt {
   top: 14%;
-  background: radial-gradient(circle, rgba($purple-muted, 1), rgba($purple-muted, 0.25));
-  box-shadow: 0 0 12px rgba($purple-muted, 0.55);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-purple-muted) 100%, transparent), color-mix(in srgb, var(--theme-purple-muted) 25%, transparent));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--theme-purple-muted) 55%, transparent);
   animation-delay: 0.4s;
 }
 
@@ -174,19 +174,19 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(155deg, rgba($navy-800, 0.98), rgba($navy-900, 0.99));
-  border: 1px solid rgba($cyan-base, 0.42);
-  color: $cyan-base;
+  background: linear-gradient(155deg, color-mix(in srgb, var(--theme-navy-800) 98%, transparent), color-mix(in srgb, var(--theme-navy-900) 99%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 42%, transparent);
+  color: var(--theme-cyan);
   font-size: clamp(38px, 10vw, 48px);
   z-index: 3;
   box-shadow:
-    0 0 48px rgba($cyan-base, 0.22),
-    0 0 88px rgba($purple-muted, 0.12),
-    inset 0 1px 0 rgba($white, 0.12);
+    0 0 48px color-mix(in srgb, var(--theme-cyan) 22%, transparent),
+    0 0 88px color-mix(in srgb, var(--theme-purple-muted) 12%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 12%, transparent);
   animation: coreBob 4.5s ease-in-out infinite;
 
   svg {
-    filter: drop-shadow(0 0 12px rgba($cyan-base, 0.45));
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--theme-cyan) 45%, transparent));
   }
 }
 
@@ -194,7 +194,7 @@
   position: absolute;
   inset: -45%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba($cyan-base, 0.28) 0%, transparent 62%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 28%, transparent) 0%, transparent 62%);
   animation: glowPulse 3s ease-in-out infinite;
   z-index: -1;
   pointer-events: none;
@@ -204,7 +204,7 @@
   position: absolute;
   inset: -10px;
   border-radius: 50%;
-  border: 1px solid rgba($purple-muted, 0.45);
+  border: 1px solid color-mix(in srgb, var(--theme-purple-muted) 45%, transparent);
   animation: coreRingSpin 12s linear infinite;
   pointer-events: none;
 }
@@ -216,8 +216,8 @@
   background: linear-gradient(
     118deg,
     transparent 38%,
-    rgba($white, 0.07) 48%,
-    rgba($cyan-base, 0.12) 52%,
+    color-mix(in srgb, var(--theme-fg) 7%, transparent) 48%,
+    color-mix(in srgb, var(--theme-cyan) 12%, transparent) 52%,
     transparent 62%
   );
   background-size: 200% 100%;
@@ -236,7 +236,7 @@
   margin-left: -1px;
   margin-top: -38%;
   border-radius: 1px;
-  background: linear-gradient(180deg, rgba($cyan-base, 0.55), transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--theme-cyan) 55%, transparent), transparent);
   transform-origin: bottom center;
   opacity: 0.35;
   animation: beamPulse 2.4s ease-in-out infinite;

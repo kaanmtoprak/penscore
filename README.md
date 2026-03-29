@@ -39,6 +39,10 @@ npm run start
 
 `vite preview` ile `dist` önizlenir.
 
+### Tema (açık / koyu)
+
+Header’daki güneş/ay düğmesi veya mobil menüdeki tema satırı ile **açık** ve **koyu** mod arasında geçiş yapılır. Seçim tarayıcıda `localStorage` anahtarı `app_theme` ile saklanır; varsayılan **açık** moddur. Renk token’ları `src/styles/theme.scss` içinde tanımlıdır.
+
 ---
 
 ## Docker ile derleme ve çalıştırma
@@ -94,7 +98,3 @@ docker run --rm -e PORT=3000 -p 3000:3000 penscore
 
 ---
 
-## Notlar
-
-- **Linux / Docker:** SCSS içinde dosya yolları gerçek klasör adlarıyla aynı olmalıdır (büyük/küçük harf duyarlılığı).
-- Yerelde sadece statik hosting kullanacaksan `dist/` içeriğini herhangi bir statik sunucuya atıp tüm rotalar için `index.html` fallback kullanman gerekir (Docker nginx şablonu bunu zaten yapar).

@@ -1,0 +1,70 @@
+:root,
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --theme-navy-950: #d3dce8;
+  --theme-navy-900: #c8d4e4;
+  --theme-navy-850: #bcc8da;
+  --theme-navy-800: #b0bed0;
+  --theme-navy-750: #a8b6ca;
+
+  --theme-fg: #0f172a;
+  --theme-fg-soft: #f1f5f9;
+  --theme-shadow: #0f172a;
+  --theme-on-accent: #042f2c;
+  --theme-mask: #000000;
+
+  --theme-cyan: #0d9488;
+  --theme-purple-muted: #5b5a8f;
+  --theme-blue-base: #2563eb;
+  --theme-blue-light: #3b82f6;
+  --theme-blue-dark: #1d4ed8;
+  --theme-pink-base: #c0266e;
+  --theme-pink-accent: #be185d;
+  --theme-pink-hot: #c0266e;
+  --theme-blue-legacy: #0369a1;
+  --theme-blue-facebook: #3b5998;
+  --theme-blue-social: #0c7ebf;
+  --theme-red-social: #ef4444;
+  --theme-teal-linkedin: #0e76a8;
+  --theme-yellow-base: #b45309;
+
+  --theme-body-text: color-mix(in srgb, var(--theme-fg) 82%, transparent);
+  --theme-selection-bg: #0f766e;
+  --theme-selection-fg: #f8fafc;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --theme-navy-950: #070d18;
+  --theme-navy-900: #0a1220;
+  --theme-navy-850: #14192d;
+  --theme-navy-800: #1a2037;
+  --theme-navy-750: #1a2237;
+
+  --theme-fg: #ffffff;
+  --theme-fg-soft: #f8fafc;
+  --theme-shadow: #000000;
+  --theme-on-accent: #000000;
+  --theme-mask: #000000;
+
+  --theme-cyan: #18fef5;
+  --theme-purple-muted: #2b2a5e;
+  --theme-blue-base: #3875ea;
+  --theme-blue-light: #5a93ff;
+  --theme-blue-dark: #2e65cd;
+  --theme-pink-base: #ed1979;
+  --theme-pink-accent: #ff0080;
+  --theme-pink-hot: #ff00a4;
+  --theme-blue-legacy: #0196e7;
+  --theme-blue-facebook: #3b5998;
+  --theme-blue-social: #1a90d9;
+  --theme-red-social: #ff5252;
+  --theme-teal-linkedin: #0e76a8;
+  --theme-yellow-base: #d9d74c;
+
+  --theme-body-text: color-mix(in srgb, var(--theme-fg) 80%, transparent);
+  --theme-selection-bg: #0d9488;
+  --theme-selection-fg: #f8fafc;
+}

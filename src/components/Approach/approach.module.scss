@@ -20,9 +20,9 @@
   display: inline-block;
   padding: 6px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba($blue-base, 0.16), rgba($blue-dark, 0.08));
-  color: $white;
-  border: 1px solid rgba($blue-dark, 0.2);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-blue-base) 16%, transparent), color-mix(in srgb, var(--theme-blue-dark) 8%, transparent));
+  color: var(--theme-fg);
+  border: 1px solid color-mix(in srgb, var(--theme-blue-dark) 20%, transparent);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -31,7 +31,7 @@
 
 .title {
   margin: 0 0 12px;
-  color: $white;
+  color: var(--theme-fg);
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.15;
   font-weight: 700;
@@ -39,7 +39,7 @@
 
 .subtitle {
   margin: 0;
-  color: rgba($white, 0.82);
+  color: color-mix(in srgb, var(--theme-fg) 82%, transparent);
   max-width: 760px;
   margin-inline: auto;
 }
@@ -55,8 +55,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 30%, rgba($cyan-base, 0.25), transparent 36%),
-    radial-gradient(circle at 80% 68%, rgba($purple-muted, 0.24), transparent 38%);
+    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--theme-cyan) 25%, transparent), transparent 36%),
+    radial-gradient(circle at 80% 68%, color-mix(in srgb, var(--theme-purple-muted) 24%, transparent), transparent 38%);
 }
 
 .steps {
@@ -75,7 +75,7 @@
   bottom: 0;
   width: 2px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba($cyan-base, 0.1), rgba($cyan-base, 0.75), rgba($purple-muted, 0.5));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--theme-cyan) 10%, transparent), color-mix(in srgb, var(--theme-cyan) 75%, transparent), color-mix(in srgb, var(--theme-purple-muted) 50%, transparent));
 }
 
 .stepCard {
@@ -84,13 +84,13 @@
   display: grid;
   grid-template-columns: 52px 1fr;
   gap: 14px;
-  background: linear-gradient(155deg, rgba($navy-850, 0.98), rgba($navy-900, 0.96));
-  border: 1px solid rgba($cyan-base, 0.2);
+  background: linear-gradient(155deg, color-mix(in srgb, var(--theme-navy-850) 98%, transparent), color-mix(in srgb, var(--theme-navy-900) 96%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 20%, transparent);
   border-radius: 16px;
   padding: 16px;
   box-shadow:
-    0 14px 28px rgba($black, 0.18),
-    inset 0 1px 0 rgba($white, 0.05);
+    0 14px 28px color-mix(in srgb, var(--theme-shadow) 18%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 5%, transparent);
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
   animation: stepFloat 5.2s ease-in-out infinite;
   overflow: hidden;
@@ -103,7 +103,7 @@
   top: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, rgba($cyan-base, 0), rgba($cyan-base, 0.75), rgba($purple-muted, 0.7), rgba($cyan-base, 0));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--theme-cyan) 0%, transparent), color-mix(in srgb, var(--theme-cyan) 75%, transparent), color-mix(in srgb, var(--theme-purple-muted) 70%, transparent), color-mix(in srgb, var(--theme-cyan) 0%, transparent));
 }
 
 .stepCard::after {
@@ -114,7 +114,7 @@
   width: 140px;
   height: 140px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba($cyan-base, 0.16), rgba($cyan-base, 0));
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 16%, transparent), color-mix(in srgb, var(--theme-cyan) 0%, transparent));
   pointer-events: none;
 }
 
@@ -128,11 +128,11 @@
 
 .stepCard:hover {
   transform: translateY(-4px);
-  border-color: rgba($cyan-base, 0.5);
-  background: linear-gradient(155deg, rgba($navy-800, 0.98), rgba($navy-900, 0.98));
+  border-color: color-mix(in srgb, var(--theme-cyan) 50%, transparent);
+  background: linear-gradient(155deg, color-mix(in srgb, var(--theme-navy-800) 98%, transparent), color-mix(in srgb, var(--theme-navy-900) 98%, transparent));
   box-shadow:
-    0 20px 36px rgba($black, 0.24),
-    inset 0 1px 0 rgba($white, 0.1);
+    0 20px 36px color-mix(in srgb, var(--theme-shadow) 24%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 10%, transparent);
 }
 
 .stepCard:nth-child(2n) {
@@ -151,12 +151,12 @@
   display: grid;
   place-items: center;
   z-index: 1;
-  background: linear-gradient(145deg, rgba($blue-base, 0.28), rgba($purple-muted, 0.2));
-  border: 1px solid rgba($cyan-base, 0.4);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-blue-base) 28%, transparent), color-mix(in srgb, var(--theme-purple-muted) 20%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 40%, transparent);
   box-shadow:
-    0 8px 16px rgba($black, 0.2),
-    inset 0 1px 0 rgba($white, 0.14);
-  color: $cyan-base;
+    0 8px 16px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 14%, transparent);
+  color: var(--theme-cyan);
   animation: iconPulse 2.8s ease-in-out infinite;
 
   svg {
@@ -172,14 +172,14 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: rgba($white, 0.9);
-  border: 1px solid rgba($cyan-base, 0.32);
-  background: linear-gradient(135deg, rgba($cyan-base, 0.16), rgba($blue-base, 0.08));
+  color: color-mix(in srgb, var(--theme-fg) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 32%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-cyan) 16%, transparent), color-mix(in srgb, var(--theme-blue-base) 8%, transparent));
 }
 
 .stepBody h3 {
   margin: 0 0 8px;
-  color: $white;
+  color: var(--theme-fg);
   font-size: 21px;
   font-weight: 700;
   line-height: 1.25;
@@ -187,7 +187,7 @@
 
 .stepBody p {
   margin: 0;
-  color: rgba($white, 0.82);
+  color: color-mix(in srgb, var(--theme-fg) 82%, transparent);
   line-height: 1.58;
 }
 
@@ -205,15 +205,15 @@
   0%,
   100% {
     box-shadow:
-      0 8px 16px rgba($black, 0.2),
-      inset 0 1px 0 rgba($white, 0.14),
-      0 0 0 0 rgba($cyan-base, 0.16);
+      0 8px 16px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+      inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 14%, transparent),
+      0 0 0 0 color-mix(in srgb, var(--theme-cyan) 16%, transparent);
   }
   50% {
     box-shadow:
-      0 8px 16px rgba($black, 0.2),
-      inset 0 1px 0 rgba($white, 0.14),
-      0 0 0 8px rgba($cyan-base, 0.02);
+      0 8px 16px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+      inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 14%, transparent),
+      0 0 0 8px color-mix(in srgb, var(--theme-cyan) 2%, transparent);
   }
 }
 

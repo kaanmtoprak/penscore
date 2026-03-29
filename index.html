@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('app_theme');
+          document.documentElement.setAttribute('data-theme', t === 'light' || t === 'dark' ? t : 'light');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <title>PenScore</title>
     <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
     <link

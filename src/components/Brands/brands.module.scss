@@ -8,12 +8,12 @@
   isolation: isolate;
   overflow: hidden;
   border-radius: 26px;
-  border: 1px solid rgba($cyan-base, 0.22);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   background:
-    linear-gradient(155deg, rgba($navy-800, 0.94) 0%, rgba($navy-850, 0.97) 45%, rgba($navy-900, 0.98) 100%);
+    linear-gradient(155deg, color-mix(in srgb, var(--theme-navy-800) 94%, transparent) 0%, color-mix(in srgb, var(--theme-navy-850) 97%, transparent) 45%, color-mix(in srgb, var(--theme-navy-900) 98%, transparent) 100%);
   box-shadow:
-    0 24px 64px rgba($black, 0.35),
-    0 0 0 1px rgba($white, 0.04) inset;
+    0 24px 64px color-mix(in srgb, var(--theme-shadow) 35%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--theme-fg) 4%, transparent) inset;
   animation: sectionEnter 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -64,9 +64,9 @@
   padding: 1px;
   background: linear-gradient(
     140deg,
-    rgba($cyan-base, 0.35),
-    rgba($purple-muted, 0.25) 50%,
-    rgba($pink-accent, 0.2)
+    color-mix(in srgb, var(--theme-cyan) 35%, transparent),
+    color-mix(in srgb, var(--theme-purple-muted) 25%, transparent) 50%,
+    color-mix(in srgb, var(--theme-pink-accent) 20%, transparent)
   );
   background-size: 200% 200%;
   animation: cardBorder 8s ease infinite;
@@ -92,9 +92,9 @@
   justify-content: center;
   padding: 18px 16px;
   border-radius: 17px;
-  background: linear-gradient(165deg, rgba($navy-800, 0.88) 0%, rgba($navy-850, 0.95) 100%);
-  border: 1px solid rgba($white, 0.06);
-  box-shadow: inset 0 1px 0 rgba($white, 0.06);
+  background: linear-gradient(165deg, color-mix(in srgb, var(--theme-navy-800) 88%, transparent) 0%, color-mix(in srgb, var(--theme-navy-850) 95%, transparent) 100%);
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 6%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 6%, transparent);
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s ease;
@@ -107,8 +107,8 @@
     background: linear-gradient(
       105deg,
       transparent 35%,
-      rgba($white, 0.06) 48%,
-      rgba($cyan-base, 0.08) 50%,
+      color-mix(in srgb, var(--theme-fg) 6%, transparent) 48%,
+      color-mix(in srgb, var(--theme-cyan) 8%, transparent) 50%,
       transparent 62%
     );
     opacity: 0;
@@ -120,8 +120,8 @@
 .card:hover .cardInner {
   transform: translateY(-4px) scale(1.02);
   box-shadow:
-    inset 0 1px 0 rgba($white, 0.1),
-    0 16px 36px rgba($black, 0.35);
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 10%, transparent),
+    0 16px 36px color-mix(in srgb, var(--theme-shadow) 35%, transparent);
 
   &::after {
     opacity: 1;

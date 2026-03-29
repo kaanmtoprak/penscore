@@ -26,7 +26,7 @@
   h2 {
     margin: 10px auto 0;
     max-width: 760px;
-    color: $white;
+    color: var(--theme-fg);
     font-size: clamp(30px, 4vw, 44px);
     line-height: 1.2;
   }
@@ -36,9 +36,9 @@
   display: inline-block;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba($cyan-base, 0.36);
-  background: rgba($cyan-base, 0.08);
-  color: $cyan-base;
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 36%, transparent);
+  background: color-mix(in srgb, var(--theme-cyan) 8%, transparent);
+  color: var(--theme-cyan);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -57,11 +57,11 @@
   flex-direction: column;
   padding: 24px 20px 22px;
   border-radius: 16px;
-  border: 1px solid rgba($cyan-base, 0.2);
-  background: linear-gradient(160deg, rgba($navy-800, 0.95), rgba($navy-900, 0.98));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 20%, transparent);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--theme-navy-800) 95%, transparent), color-mix(in srgb, var(--theme-navy-900) 98%, transparent));
   box-shadow:
-    0 20px 40px rgba($black, 0.24),
-    inset 0 1px 0 rgba($white, 0.06);
+    0 20px 40px color-mix(in srgb, var(--theme-shadow) 24%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 6%, transparent);
   overflow: hidden;
   animation: cardFloat 5.5s ease-in-out infinite;
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
@@ -74,7 +74,7 @@
   top: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, rgba($cyan-base, 0), rgba($cyan-base, 0.75), rgba($purple-muted, 0.72), rgba($cyan-base, 0));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--theme-cyan) 0%, transparent), color-mix(in srgb, var(--theme-cyan) 75%, transparent), color-mix(in srgb, var(--theme-purple-muted) 72%, transparent), color-mix(in srgb, var(--theme-cyan) 0%, transparent));
 }
 
 .card::after {
@@ -85,17 +85,17 @@
   width: 40%;
   height: 300%;
   transform: rotate(24deg);
-  background: linear-gradient(90deg, rgba($white, 0), rgba($white, 0.2), rgba($white, 0));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--theme-fg) 0%, transparent), color-mix(in srgb, var(--theme-fg) 20%, transparent), color-mix(in srgb, var(--theme-fg) 0%, transparent));
   transition: transform 0.7s ease;
   pointer-events: none;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba($cyan-base, 0.45);
+  border-color: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
   box-shadow:
-    0 28px 48px rgba($black, 0.3),
-    inset 0 1px 0 rgba($white, 0.1);
+    0 28px 48px color-mix(in srgb, var(--theme-shadow) 30%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 10%, transparent);
 }
 
 .card:hover::after {
@@ -109,7 +109,7 @@
   width: 140px;
   height: 140px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba($cyan-base, 0.18), rgba($cyan-base, 0));
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 18%, transparent), color-mix(in srgb, var(--theme-cyan) 0%, transparent));
   pointer-events: none;
 }
 
@@ -126,10 +126,10 @@
   border-radius: 12px;
   display: grid;
   place-items: center;
-  color: $cyan-base;
-  border: 1px solid rgba($cyan-base, 0.35);
-  background: linear-gradient(145deg, rgba($blue-base, 0.2), rgba($purple-muted, 0.12));
-  box-shadow: 0 10px 18px rgba($black, 0.2);
+  color: var(--theme-cyan);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 35%, transparent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-blue-base) 20%, transparent), color-mix(in srgb, var(--theme-purple-muted) 12%, transparent));
+  box-shadow: 0 10px 18px color-mix(in srgb, var(--theme-shadow) 20%, transparent);
   animation: iconPulse 3.2s ease-in-out infinite;
 }
 
@@ -140,11 +140,11 @@
 .stars {
   display: inline-flex;
   gap: 4px;
-  color: $yellow-base;
+  color: var(--theme-yellow-base);
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba($yellow-base, 0.24);
-  background: rgba($yellow-base, 0.06);
+  border: 1px solid color-mix(in srgb, var(--theme-yellow-base) 24%, transparent);
+  background: color-mix(in srgb, var(--theme-yellow-base) 6%, transparent);
 }
 
 .stars svg {
@@ -153,7 +153,7 @@
 
 .text {
   margin: 0;
-  color: rgba($white, 0.84);
+  color: color-mix(in srgb, var(--theme-fg) 84%, transparent);
   line-height: 1.75;
   font-size: 15px;
 }
@@ -161,25 +161,25 @@
 .person {
   margin-top: 20px;
   padding-top: 14px;
-  border-top: 1px solid rgba($cyan-base, 0.18);
+  border-top: 1px solid color-mix(in srgb, var(--theme-cyan) 18%, transparent);
 
   h4 {
     margin: 0 0 4px;
-    color: $white;
+    color: var(--theme-fg);
     font-size: 16px;
     font-weight: 700;
   }
 
   p {
     margin: 0;
-    color: rgba($white, 0.8);
+    color: color-mix(in srgb, var(--theme-fg) 80%, transparent);
     font-size: 14px;
   }
 
   span {
     display: inline-block;
     margin-top: 5px;
-    color: rgba($cyan-base, 0.95);
+    color: color-mix(in srgb, var(--theme-cyan) 95%, transparent);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -200,13 +200,13 @@
   0%,
   100% {
     box-shadow:
-      0 10px 18px rgba($black, 0.2),
-      0 0 0 0 rgba($cyan-base, 0.16);
+      0 10px 18px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+      0 0 0 0 color-mix(in srgb, var(--theme-cyan) 16%, transparent);
   }
   50% {
     box-shadow:
-      0 10px 18px rgba($black, 0.2),
-      0 0 0 8px rgba($cyan-base, 0.03);
+      0 10px 18px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+      0 0 0 8px color-mix(in srgb, var(--theme-cyan) 3%, transparent);
   }
 }
 

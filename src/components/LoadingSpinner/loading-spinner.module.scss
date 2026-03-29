@@ -11,11 +11,11 @@
 .spinner {
   width: 44px;
   height: 44px;
-  border: 3px solid rgba($cyan-base, 0.18);
-  border-top-color: $cyan-base;
+  border: 3px solid color-mix(in srgb, var(--theme-cyan) 18%, transparent);
+  border-top-color: var(--theme-cyan);
   border-radius: 50%;
   animation: spin 0.75s linear infinite;
-  box-shadow: 0 0 24px rgba($cyan-base, 0.25);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--theme-cyan) 25%, transparent);
 }
 
 @keyframes spin {
@@ -39,6 +39,6 @@
 @media (prefers-reduced-motion: reduce) {
   .spinner {
     animation: none;
-    border-top-color: rgba($cyan-base, 0.6);
+    border-top-color: color-mix(in srgb, var(--theme-cyan) 60%, transparent);
   }
 }
