@@ -23,8 +23,8 @@
   display: inline-block;
   padding: 6px 18px;
   border-radius: 999px;
-  background: rgba($cyan-base, 0.18);
-  color: $white;
+  background: color-mix(in srgb, var(--theme-cyan) 18%, transparent);
+  color: var(--theme-fg);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -32,13 +32,13 @@
 
 .industry {
   margin: 0 0 8px;
-  color: $cyan-base;
+  color: var(--theme-cyan);
   font-weight: 600;
 }
 
 .title {
   margin: 0 0 14px;
-  color: $white;
+  color: var(--theme-fg);
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.15;
   font-weight: 700;
@@ -47,7 +47,7 @@
 
 .body {
   margin: 0;
-  color: rgba($white, 0.82);
+  color: color-mix(in srgb, var(--theme-fg) 82%, transparent);
 }
 
 .stats {
@@ -59,12 +59,12 @@
 
 .statCard {
   position: relative;
-  background: linear-gradient(150deg, rgba($navy-800, 0.96), rgba($navy-900, 0.96));
-  border: 1px solid rgba($cyan-base, 0.22);
+  background: linear-gradient(150deg, color-mix(in srgb, var(--theme-navy-800) 96%, transparent), color-mix(in srgb, var(--theme-navy-900) 96%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   border-radius: 12px;
   padding: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba($black, 0.2);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--theme-shadow) 20%, transparent);
   animation: riseIn 0.55s ease both;
   transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 
@@ -76,19 +76,19 @@
     width: 110px;
     height: 110px;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba($cyan-base, 0.2) 0%, rgba($cyan-base, 0) 72%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 20%, transparent) 0%, color-mix(in srgb, var(--theme-cyan) 0%, transparent) 72%);
     pointer-events: none;
   }
 
   &:hover {
     transform: translateY(-4px);
-    border-color: rgba($cyan-base, 0.45);
-    box-shadow: 0 16px 28px rgba($black, 0.26);
+    border-color: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
+    box-shadow: 0 16px 28px color-mix(in srgb, var(--theme-shadow) 26%, transparent);
   }
 
   h3 {
     margin: 0;
-    color: $white;
+    color: var(--theme-fg);
     font-size: 15px;
     line-height: 1.4;
     font-weight: 600;
@@ -102,10 +102,10 @@
   border-radius: 10px;
   display: grid;
   place-items: center;
-  color: $cyan-base;
-  border: 1px solid rgba($cyan-base, 0.32);
-  background: linear-gradient(145deg, rgba($blue-base, 0.2), rgba($purple-muted, 0.14));
-  box-shadow: 0 8px 16px rgba($black, 0.2);
+  color: var(--theme-cyan);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 32%, transparent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--theme-blue-base) 20%, transparent), color-mix(in srgb, var(--theme-purple-muted) 14%, transparent));
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--theme-shadow) 20%, transparent);
 
   svg {
     font-size: 16px;
@@ -114,22 +114,22 @@
 
 .quote {
   margin: 20px 0 0;
-  background: linear-gradient(150deg, rgba($navy-850, 0.92), rgba($navy-900, 0.92));
-  border: 1px solid rgba($cyan-base, 0.22);
-  border-left: 3px solid rgba($cyan-base, 0.7);
+  background: linear-gradient(150deg, color-mix(in srgb, var(--theme-navy-850) 92%, transparent), color-mix(in srgb, var(--theme-navy-900) 92%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--theme-cyan) 70%, transparent);
   border-radius: 12px;
   padding: 15px 15px 13px;
-  box-shadow: 0 12px 24px rgba($black, 0.2);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--theme-shadow) 20%, transparent);
   transition: border-color 0.22s ease, box-shadow 0.22s ease;
 
   &:hover {
-    border-color: rgba($cyan-base, 0.45);
-    box-shadow: 0 16px 28px rgba($black, 0.24);
+    border-color: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
+    box-shadow: 0 16px 28px color-mix(in srgb, var(--theme-shadow) 24%, transparent);
   }
 
   p {
     margin: 0 0 10px;
-    color: rgba($white, 0.92);
+    color: color-mix(in srgb, var(--theme-fg) 92%, transparent);
     font-style: italic;
   }
 
@@ -137,11 +137,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px 12px;
-    color: rgba($white, 0.76);
+    color: color-mix(in srgb, var(--theme-fg) 76%, transparent);
     font-size: 13px;
 
     strong {
-      color: $white;
+      color: var(--theme-fg);
       font-weight: 600;
     }
   }
@@ -180,10 +180,10 @@
   inset: -25%;
   background: conic-gradient(
     from 200deg at 50% 50%,
-    rgba($purple-muted, 0.35),
-    rgba($cyan-base, 0.2),
-    rgba($blue-light, 0.12),
-    rgba($purple-muted, 0.3)
+    color-mix(in srgb, var(--theme-purple-muted) 35%, transparent),
+    color-mix(in srgb, var(--theme-cyan) 20%, transparent),
+    color-mix(in srgb, var(--theme-blue-light) 12%, transparent),
+    color-mix(in srgb, var(--theme-purple-muted) 30%, transparent)
   );
   animation: caseAuraSpin 18s linear infinite;
   filter: blur(36px);
@@ -195,11 +195,11 @@
   inset: 0;
   opacity: 0.22;
   background-image:
-    linear-gradient(rgba($cyan-base, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($purple-muted, 0.1) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--theme-cyan) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-purple-muted) 10%, transparent) 1px, transparent 1px);
   background-size: 22px 22px;
-  mask-image: radial-gradient(circle at 50% 50%, $black 22%, transparent 72%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, $black 22%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 22%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 22%, transparent 72%);
 }
 
 .caseVizRings {
@@ -215,7 +215,7 @@
   left: 50%;
   top: 50%;
   border-radius: 50%;
-  border: 1px solid rgba($cyan-base, 0.15);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 15%, transparent);
 
   &:nth-child(1) {
     width: 78%;
@@ -226,7 +226,7 @@
   &:nth-child(2) {
     width: 92%;
     height: 92%;
-    border-color: rgba($purple-muted, 0.2);
+    border-color: color-mix(in srgb, var(--theme-purple-muted) 20%, transparent);
     animation: caseRingPulse 5s ease-in-out infinite 0.6s;
   }
 }
@@ -250,10 +250,10 @@
   max-width: 22px;
   min-height: 18%;
   border-radius: 8px 8px 3px 3px;
-  background: linear-gradient(180deg, rgba($cyan-base, 0.95) 0%, rgba($purple-muted, 0.55) 72%, rgba($navy-900, 0.4) 100%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--theme-cyan) 95%, transparent) 0%, color-mix(in srgb, var(--theme-purple-muted) 55%, transparent) 72%, color-mix(in srgb, var(--theme-navy-900) 40%, transparent) 100%);
   box-shadow:
-    0 0 18px rgba($cyan-base, 0.35),
-    inset 0 1px 0 rgba($white, 0.15);
+    0 0 18px color-mix(in srgb, var(--theme-cyan) 35%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 15%, transparent);
   transform-origin: bottom center;
   animation: caseBarPulse 2.2s ease-in-out infinite alternate;
 }
@@ -270,11 +270,11 @@
 
 .caseVizSparkPath {
   fill: none;
-  stroke: rgba($cyan-base, 0.95);
+  stroke: color-mix(in srgb, var(--theme-cyan) 95%, transparent);
   stroke-width: 2.75;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px rgba($cyan-base, 0.5));
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--theme-cyan) 50%, transparent));
   stroke-dasharray: 320;
   stroke-dashoffset: 320;
   animation: caseSparkDraw 3.5s ease-in-out infinite;
@@ -290,19 +290,19 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(155deg, rgba($navy-800, 0.98), rgba($navy-900, 0.99));
-  border: 1px solid rgba($cyan-base, 0.4);
-  color: $cyan-base;
+  background: linear-gradient(155deg, color-mix(in srgb, var(--theme-navy-800) 98%, transparent), color-mix(in srgb, var(--theme-navy-900) 99%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 40%, transparent);
+  color: var(--theme-cyan);
   font-size: clamp(34px, 9vw, 46px);
   z-index: 3;
   box-shadow:
-    0 0 40px rgba($cyan-base, 0.25),
-    0 0 72px rgba($purple-muted, 0.15),
-    inset 0 1px 0 rgba($white, 0.12);
+    0 0 40px color-mix(in srgb, var(--theme-cyan) 25%, transparent),
+    0 0 72px color-mix(in srgb, var(--theme-purple-muted) 15%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 12%, transparent);
   animation: caseCoreFloat 4s ease-in-out infinite;
 
   svg {
-    filter: drop-shadow(0 0 10px rgba($cyan-base, 0.55));
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--theme-cyan) 55%, transparent));
   }
 }
 
@@ -310,7 +310,7 @@
   position: absolute;
   inset: -40%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba($cyan-base, 0.35) 0%, transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 35%, transparent) 0%, transparent 65%);
   animation: caseGlowPulse 2.8s ease-in-out infinite;
   z-index: -1;
   pointer-events: none;
@@ -320,7 +320,7 @@
   position: absolute;
   inset: -8px;
   border-radius: 50%;
-  border: 1px solid rgba($purple-muted, 0.45);
+  border: 1px solid color-mix(in srgb, var(--theme-purple-muted) 45%, transparent);
   animation: caseCoreRingSpin 10s linear infinite;
   pointer-events: none;
 }
@@ -331,8 +331,8 @@
   background: linear-gradient(
     115deg,
     transparent 40%,
-    rgba($white, 0.06) 48%,
-    rgba($cyan-base, 0.1) 52%,
+    color-mix(in srgb, var(--theme-fg) 6%, transparent) 48%,
+    color-mix(in srgb, var(--theme-cyan) 10%, transparent) 52%,
     transparent 58%
   );
   background-size: 220% 100%;
@@ -353,8 +353,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba($cyan-base, 0.85);
-    box-shadow: 0 0 12px rgba($cyan-base, 0.6);
+    background: color-mix(in srgb, var(--theme-cyan) 85%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--theme-cyan) 60%, transparent);
     animation: caseDotFloat 5s ease-in-out infinite;
 
     &:nth-child(1) {
@@ -367,8 +367,8 @@
       right: 16%;
       top: 38%;
       animation-delay: 1.2s;
-      background: rgba($purple-muted, 0.9);
-      box-shadow: 0 0 12px rgba($purple-muted, 0.5);
+      background: color-mix(in srgb, var(--theme-purple-muted) 90%, transparent);
+      box-shadow: 0 0 12px color-mix(in srgb, var(--theme-purple-muted) 50%, transparent);
     }
 
     &:nth-child(3) {

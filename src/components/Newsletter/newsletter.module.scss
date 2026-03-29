@@ -27,7 +27,7 @@
 .panel {
   padding: 32px 28px 34px;
   border-radius: 18px;
-  border: 1px solid rgba($cyan-base, 0.22);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   background: transparent;
   box-shadow: none;
   animation: fadeUp 0.65s ease both;
@@ -38,9 +38,9 @@
   margin-bottom: 14px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba($cyan-base, 0.14), rgba($blue-base, 0.1));
-  border: 1px solid rgba($cyan-base, 0.38);
-  color: $cyan-base;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-cyan) 14%, transparent), color-mix(in srgb, var(--theme-blue-base) 10%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 38%, transparent);
+  color: var(--theme-cyan);
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -49,12 +49,12 @@
 
 .title {
   margin: 0 0 12px;
-  color: $white;
+  color: var(--theme-fg);
   font-size: clamp(24px, 4vw, 34px);
   font-weight: 800;
   line-height: 1.2;
   text-wrap: balance;
-  background: linear-gradient(115deg, $white 0%, rgba($white, 0.9) 50%, rgba($cyan-base, 0.92) 100%);
+  background: linear-gradient(115deg, var(--theme-fg) 0%, color-mix(in srgb, var(--theme-fg) 90%, transparent) 50%, color-mix(in srgb, var(--theme-cyan) 92%, transparent) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -63,7 +63,7 @@
 .subtitle {
   margin: 0 auto;
   max-width: 520px;
-  color: rgba($white, 0.78);
+  color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
   font-size: clamp(15px, 1.4vw, 17px);
   line-height: 1.65;
 }
@@ -79,14 +79,14 @@
   align-items: stretch;
   gap: 0;
   border-radius: 12px;
-  border: 1px solid rgba($cyan-base, 0.22);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   background: transparent;
   overflow: hidden;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus-within {
-    border-color: rgba($cyan-base, 0.5);
-    box-shadow: 0 0 0 3px rgba($cyan-base, 0.12);
+    border-color: color-mix(in srgb, var(--theme-cyan) 50%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-cyan) 12%, transparent);
   }
 }
 
@@ -96,14 +96,14 @@
   padding: 14px 16px;
   border: 0;
   background: transparent;
-  color: $white;
+  color: var(--theme-fg);
   font-size: 15px;
   font-weight: 500;
   font-family: inherit;
   line-height: 1.4;
 
   &::placeholder {
-    color: rgba($white, 0.38);
+    color: color-mix(in srgb, var(--theme-fg) 38%, transparent);
   }
 
   &:focus {
@@ -115,7 +115,7 @@
   flex-shrink: 0;
   margin: 0;
   border-radius: 0 !important;
-  border-left: 1px solid rgba($cyan-base, 0.22);
+  border-left: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
   padding: 14px 22px;
   display: inline-flex;
   align-items: center;
@@ -135,7 +135,7 @@
   margin: 0;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba($white, 0.45);
+  color: color-mix(in srgb, var(--theme-fg) 45%, transparent);
 }
 
 @keyframes fadeUp {
@@ -169,11 +169,11 @@
     border-radius: 0 0 11px 11px !important;
     padding: 14px 18px;
     border-left: 0;
-    border-top: 1px solid rgba($cyan-base, 0.15);
+    border-top: 1px solid color-mix(in srgb, var(--theme-cyan) 15%, transparent);
   }
 
   .input {
-    border-bottom: 1px solid rgba($cyan-base, 0.15);
+    border-bottom: 1px solid color-mix(in srgb, var(--theme-cyan) 15%, transparent);
     border-radius: 11px 11px 0 0;
   }
 }

@@ -1,15 +1,17 @@
-@use "../settings/colors" as *;
-
 html {
 	min-height: 100%;
-	background-color: $navy-950;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	overscroll-behavior-x: none;
+	background-color: var(--theme-navy-950);
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: rgba(255, 255, 255, 0.8);
+	color: var(--theme-body-text);
 	font-family: "Exo", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -17,15 +19,28 @@ body {
 	position: relative;
 	min-height: 100vh;
 	min-height: 100dvh;
-	background-color: $navy-950;
+	width: 100%;
+	max-width: 100%;
+	background-color: var(--theme-navy-950);
 	background-image:
-		radial-gradient(circle at 8% 10%, rgba($blue-base, 0.28), transparent 38%),
-		radial-gradient(circle at 92% 88%, rgba($pink-base, 0.2), transparent 42%),
-		linear-gradient(180deg, $navy-900 0%, $navy-950 100%);
+		radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--theme-blue-base) 28%, transparent), transparent 38%),
+		radial-gradient(circle at 92% 88%, color-mix(in srgb, var(--theme-pink-base) 20%, transparent), transparent 42%),
+		linear-gradient(180deg, var(--theme-navy-900) 0%, var(--theme-navy-950) 100%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	overflow-x: hidden;
+	overscroll-behavior-x: none;
+}
+
+@media (max-width: 768px) {
+	body {
+		background-attachment: scroll;
+	}
+}
+
+#root {
+	width: 100%;
+	max-width: 100%;
 }
 
 h1,
@@ -37,7 +52,7 @@ h6 {
 	letter-spacing: 0;
 	margin-top: 0;
 	font-family: "Exo", sans-serif;
-	color: $white;
+	color: var(--theme-fg);
 	font-weight: 400;
 }
 
@@ -49,7 +64,7 @@ a {
 }
 
 a:hover {
-	color: $white;
+	color: var(--theme-fg);
 	text-decoration: none;
 }
 
@@ -69,13 +84,13 @@ li {
 }
 
 ::-moz-selection {
-	background: $black;
-	color: $white;
+	background: var(--theme-selection-bg);
+	color: var(--theme-selection-fg);
 }
 
 ::selection {
-	background: $black;
-	color: $white;
+	background: var(--theme-selection-bg);
+	color: var(--theme-selection-fg);
 }
 
 fieldset {

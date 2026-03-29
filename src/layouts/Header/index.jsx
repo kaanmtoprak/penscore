@@ -1,6 +1,8 @@
 import Button from '@/components/Button';
 import Link from '@/components/common/Link';
+import { useTheme } from '@/context/ThemeContext';
 import React, { useEffect, useRef, useState } from 'react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { useLocation } from 'react-router-dom';
 import UseSticky from '@/hooks/UseSticky';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +26,7 @@ const LANGUAGES = [
 const Header = () => {
   const { pathname } = useLocation();
   const { sticky } = UseSticky();
+  const { theme, toggleTheme } = useTheme();
   const { i18n, t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -104,6 +107,18 @@ const Header = () => {
                 ))}
               </ul>
             </nav>
+          </div>
+
+          <div className={s.themeDock}>
+            <button
+              type="button"
+              className={s.themeToggle}
+              onClick={toggleTheme}
+              aria-label={t('global.nav.ariaThemeToggle')}
+              title={theme === 'dark' ? t('global.nav.themeSwitchLight') : t('global.nav.themeSwitchDark')}
+            >
+              {theme === 'dark' ? <FiSun aria-hidden /> : <FiMoon aria-hidden />}
+            </button>
           </div>
 
           <div className={s.langDock} ref={langRef}>
@@ -227,6 +242,11 @@ const Header = () => {
                   ))}
                 </div>
               </details>
+            </li>
+            <li className={s.mobileItem}>
+              <button type="button" className={s.mobileThemeBtn} onClick={toggleTheme}>
+                {theme === 'dark' ? t('global.nav.themeSwitchLight') : t('global.nav.themeSwitchDark')}
+              </button>
             </li>
           </ul>
           <div className={s.drawerCta}>

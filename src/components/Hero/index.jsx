@@ -1,9 +1,9 @@
 import Button from '@/components/Button';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import s from './hero.module.scss';
 
-const BLIP_COUNT = 15;
+const BLIP_COUNT = 3;
 
 const buildRadarBlips = () =>
   Array.from({ length: BLIP_COUNT }, (_, id) => {
@@ -13,17 +13,57 @@ const buildRadarBlips = () =>
       id,
       top: 50 + Math.sin(angle) * r,
       left: 50 + Math.cos(angle) * r,
-      delay: Math.random() * 4.5,
-      duration: 1.8 + Math.random() * 2.8,
+      delay: Math.random() * 3,
+      duration: 2.2 + Math.random() * 1.6,
     };
   });
 
 const Hero = () => {
   const { t } = useTranslation();
   const radarBlips = useMemo(buildRadarBlips, []);
+  const heroRef = useRef(null);
+  const [radarMotion, setRadarMotion] = useState(true);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setRadarMotion(entry.isIntersecting);
+      },
+      { root: null, rootMargin: '120px 0px', threshold: 0 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const syncVisibility = () => {
+      if (document.hidden) {
+        setRadarMotion(false);
+        return;
+      }
+      const el = heroRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      setRadarMotion(r.bottom > -80 && r.top < vh + 80);
+    };
+
+    document.addEventListener('visibilitychange', syncVisibility);
+    return () => document.removeEventListener('visibilitychange', syncVisibility);
+  }, []);
 
   return (
-    <section className={s.hero} aria-labelledby="hero-headline">
+    <section
+      ref={heroRef}
+      className={!radarMotion ? `${s.hero} ${s.heroRadarPaused}` : s.hero}
+      aria-labelledby="hero-headline"
+    >
       <div className={s.bg} aria-hidden />
       <div className={s.bgGrid} aria-hidden />
 
@@ -44,8 +84,9 @@ const Hero = () => {
             }}
           />
         ))}
-        <span className={s.radarPing} />
-        <span className={s.radarSweep} />
+        <span className={s.radarSweep}>
+          <span className={s.radarSweepInner} aria-hidden />
+        </span>
       </div>
 
       <div className={s.inner}>
@@ -62,13 +103,9 @@ const Hero = () => {
             <Button variant="primary" href="/about" className={s.ctaPrimary}>
               {t('home.hero.ctaPrimary')}
             </Button>
-              <Button
-                variant="outline"
-                href="#"
-                className={s.ctaSecondary}
-              >
-                {t('home.hero.ctaSecondary')}
-              </Button>
+            <Button variant="outline" href="#" className={s.ctaSecondary}>
+              {t('home.hero.ctaSecondary')}
+            </Button>
           </div>
         </div>
       </div>

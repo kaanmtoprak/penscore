@@ -19,10 +19,10 @@
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba($cyan-base, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($cyan-base, 0.04) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--theme-cyan) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-cyan) 4%, transparent) 1px, transparent 1px);
   background-size: min(56px, 12vw) min(56px, 12vw);
-  mask-image: radial-gradient(ellipse 80% 65% at 50% 38%, $black 20%, transparent 72%);
+  mask-image: radial-gradient(ellipse 80% 65% at 50% 38%, #000 20%, transparent 72%);
   pointer-events: none;
 }
 
@@ -42,7 +42,7 @@
   height: min(420px, 70vw);
   left: -12%;
   top: 8%;
-  background: radial-gradient(circle, rgba($cyan-base, 0.35), transparent 68%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-cyan) 35%, transparent), transparent 68%);
 }
 
 .orb2 {
@@ -50,7 +50,7 @@
   height: min(360px, 55vw);
   right: -8%;
   bottom: 4%;
-  background: radial-gradient(circle, rgba($purple-muted, 0.32), transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-purple-muted) 32%, transparent), transparent 65%);
   animation-delay: -7s;
 }
 
@@ -81,17 +81,17 @@
   letter-spacing: -0.07em;
   background: linear-gradient(
     118deg,
-    rgba($white, 0.12) 0%,
-    $cyan-base 22%,
-    $white 48%,
-    $purple-muted 72%,
-    $cyan-base 100%
+    color-mix(in srgb, var(--theme-fg) 12%, transparent) 0%,
+    var(--theme-cyan) 22%,
+    var(--theme-fg) 48%,
+    var(--theme-purple-muted) 72%,
+    var(--theme-cyan) 100%
   );
   background-size: 240% 240%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 42px rgba($cyan-base, 0.22));
+  filter: drop-shadow(0 0 42px color-mix(in srgb, var(--theme-cyan) 22%, transparent));
   animation:
     gradientFlow 10s ease-in-out infinite,
     digitFloat 5.5s ease-in-out infinite;
@@ -137,9 +137,9 @@
   margin-bottom: 14px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba($cyan-base, 0.12), rgba($blue-base, 0.08));
-  border: 1px solid rgba($cyan-base, 0.32);
-  color: $cyan-base;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-cyan) 12%, transparent), color-mix(in srgb, var(--theme-blue-base) 8%, transparent));
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 32%, transparent);
+  color: var(--theme-cyan);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -148,7 +148,7 @@
 
 .title {
   margin: 0 0 14px;
-  color: $white;
+  color: var(--theme-fg);
   font-size: clamp(1.35rem, 3.8vw, 1.85rem);
   font-weight: 700;
   line-height: 1.3;
@@ -159,7 +159,7 @@
 .sub {
   margin: 0 auto 32px;
   max-width: 420px;
-  color: rgba($white, 0.66);
+  color: color-mix(in srgb, var(--theme-fg) 66%, transparent);
   font-size: clamp(15px, 1.45vw, 17px);
   line-height: 1.65;
 }
@@ -191,7 +191,7 @@
   padding: 0;
   border: 0;
   background: none;
-  color: rgba($cyan-base, 0.92);
+  color: color-mix(in srgb, var(--theme-cyan) 92%, transparent);
   font-size: 14px;
   font-weight: 600;
   font-family: inherit;
@@ -207,11 +207,11 @@
 
   &:hover,
   &:focus-visible {
-    color: $white;
+    color: var(--theme-fg);
   }
 
   &:focus-visible {
-    outline: 2px solid rgba($cyan-base, 0.5);
+    outline: 2px solid color-mix(in srgb, var(--theme-cyan) 50%, transparent);
     outline-offset: 4px;
   }
 }
