@@ -23,7 +23,7 @@ const AboutPage = () => {
   const storyParagraphs = t('about.story.body').split('\n\n').filter(Boolean);
 
   return (
-    <>
+    <div className={s.aboutWrap}>
       <div className={s.page}>
         <section className={s.hero}>
           <span className={s.heroOrb} aria-hidden />
@@ -115,7 +115,7 @@ const AboutPage = () => {
       </div>
 
       <Testimonials />
-    </>
+    </div>
   );
 };
 
