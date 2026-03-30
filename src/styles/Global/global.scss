@@ -7,6 +7,12 @@ html {
 	background-color: var(--theme-navy-950);
 }
 
+@media (max-width: 768px) {
+	html {
+		touch-action: pan-y;
+	}
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -41,6 +47,7 @@ body {
 #root {
 	width: 100%;
 	max-width: 100%;
+	min-width: 0;
 }
 
 h1,
