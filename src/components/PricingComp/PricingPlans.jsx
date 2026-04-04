@@ -48,7 +48,15 @@ const PricingPlans = ({ billingAnnual = false }) => {
               ))}
             </ul>
 
-            <Button variant="primary" href="/contact" className={s.cta}>
+            <Button
+              variant="primary"
+              href={
+                plan.key === 'enterprise'
+                  ? '/contact'
+                  : `/payment/${plan.key}?billing=${billingAnnual ? 'annual' : 'monthly'}`
+              }
+              className={s.cta}
+            >
               {t(`pricing.${plan.key}.cta`)}
             </Button>
           </article>

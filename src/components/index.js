@@ -9,3 +9,5 @@ export {default as Testimonials} from './Testimonials';
 export {default as PricingComp} from './PricingComp';
 export {default as Newsletter} from './Newsletter';
 export {default as Faq} from './Faq';
+export {default as BlogHomeSection} from './BlogHomeSection';
+export {default as DatePicker} from './DatePicker';

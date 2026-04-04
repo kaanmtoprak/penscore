@@ -1,0 +1,350 @@
+@use "../../styles/settings/colors" as *;
+
+.page {
+  min-height: min(100vh, 100dvh);
+  padding: clamp(72px, 10vh, 100px) 20px clamp(48px, 6vh, 72px);
+  max-width: 100%;
+  min-width: 0;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto clamp(24px, 4vw, 36px);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--theme-cyan);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.backWrap {
+  max-width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: start;
+  max-width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.summary {
+  position: sticky;
+  top: 88px;
+  border-radius: 22px;
+  padding: 24px 22px;
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 22%, transparent);
+  background:
+    linear-gradient(165deg, color-mix(in srgb, var(--theme-navy-850) 94%, transparent), color-mix(in srgb, var(--theme-navy-900) 98%, transparent));
+  box-shadow:
+    0 20px 48px color-mix(in srgb, var(--theme-shadow) 20%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--theme-fg) 5%, transparent);
+}
+
+.summaryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--theme-cyan);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 30%, transparent);
+  background: color-mix(in srgb, var(--theme-cyan) 8%, transparent);
+}
+
+.summaryTitle {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--theme-fg) 65%, transparent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.planName {
+  margin: 0 0 16px;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 800;
+  color: var(--theme-fg);
+  line-height: 1.2;
+}
+
+.billingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--theme-fg) 78%, transparent);
+}
+
+.billingValue {
+  font-weight: 600;
+  color: var(--theme-fg);
+}
+
+.priceBlock {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--theme-fg) 10%, transparent);
+}
+
+.priceLabel {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--theme-fg) 62%, transparent);
+}
+
+.priceAmount {
+  margin: 0;
+  font-size: clamp(26px, 3.5vw, 34px);
+  font-weight: 800;
+  color: var(--theme-cyan);
+  letter-spacing: -0.02em;
+}
+
+.priceNote {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--theme-fg) 55%, transparent);
+}
+
+.customHint {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--theme-fg) 70%, transparent);
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel {
+  border-radius: 20px;
+  padding: 22px 22px 24px;
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 16%, transparent);
+  background: color-mix(in srgb, var(--theme-navy-950) 40%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.panelHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.panelIcon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--theme-cyan);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 28%, transparent);
+  background: color-mix(in srgb, var(--theme-cyan) 8%, transparent);
+  font-size: 20px;
+}
+
+.panelTitle {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--theme-fg);
+}
+
+.panelHint {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--theme-fg) 62%, transparent);
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.segmentBtn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 14%, transparent);
+  background: color-mix(in srgb, var(--theme-navy-900) 50%, transparent);
+  color: var(--theme-fg);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--theme-cyan) 35%, transparent);
+  }
+}
+
+.segmentBtnActive {
+  border-color: color-mix(in srgb, var(--theme-cyan) 50%, transparent);
+  background: color-mix(in srgb, var(--theme-cyan) 12%, transparent);
+  color: var(--theme-cyan);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--theme-cyan) 25%, transparent);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.grid1 {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--theme-fg) 72%, transparent);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--theme-fg) 12%, transparent);
+  background: color-mix(in srgb, var(--theme-navy-900) 65%, transparent);
+  color: var(--theme-fg);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: color-mix(in srgb, var(--theme-fg) 42%, transparent);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: color-mix(in srgb, var(--theme-cyan) 45%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-cyan) 15%, transparent);
+  }
+}
+
+.inputError,
+.textarea.inputError {
+  border-color: color-mix(in srgb, var(--theme-red-social) 55%, transparent);
+
+  &:focus {
+    border-color: color-mix(in srgb, var(--theme-red-social) 65%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-red-social) 18%, transparent);
+  }
+}
+
+.fieldError {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--theme-red-social) 92%, var(--theme-fg));
+}
+
+.textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.submitBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin-top: 8px;
+  padding: 16px 0 0;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--theme-navy-950) 92%, transparent) 30%);
+}
+
+.submit {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--theme-primary-button-fg);
+  background: var(--theme-primary-button-bg);
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: var(--theme-primary-button-hover);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--theme-cyan) 55%, transparent);
+    outline-offset: 3px;
+  }
+}
+
+.disclaimer {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--theme-fg) 52%, transparent);
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: relative;
+    top: auto;
+  }
+
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .segmentBtn {
+    min-width: 100%;
+  }
+}

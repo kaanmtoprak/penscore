@@ -1,0 +1,124 @@
+{
+  "list": {
+    "title": "Blog",
+    "subtitle": "Mobil uygulama güvenliği, statik analiz ve güvenli teslimat üzerine içerikler.",
+    "readMore": "Yazıyı oku",
+    "empty": "Bu sayfada yazı yok.",
+    "emptyTitle": "Henüz yazı yok",
+    "emptyHint": "Yeni yazılar yayınlandığında burada listelenecek."
+  },
+  "home": {
+    "kicker": "Blogdan",
+    "title": "Daha güvenli mobil sürümler için fikirler",
+    "subtitle": "Güvenlik, pipeline ve uyumluluk üzerine kısa okumalar — ekibimizden.",
+    "viewAll": "Tüm yazılar",
+    "readArticle": "Oku",
+    "ariaSection": "Son blog yazıları"
+  },
+  "pagination": {
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "aria": "Blog sayfalama",
+    "pageLabel": "Sayfa {{page}} / {{totalPages}}"
+  },
+  "detail": {
+    "back": "Bloga dön",
+    "imageAlt": "Siber güvenlik görseli",
+    "notFound": "Bu yazı bulunamadı."
+  },
+  "postOrder": [
+    "cyber-security-fundamentals",
+    "mobile-threat-modeling",
+    "static-analysis-mastery",
+    "secrets-in-mobile-binaries",
+    "cicd-security-gates",
+    "compliance-for-fintech-apps",
+    "owasp-mobile-top-10-overview",
+    "masvs-from-theory-to-practice",
+    "api-security-mobile-context",
+    "reverse-engineering-basics",
+    "secure-sdlc-for-mobile",
+    "pentest-vs-static-analysis",
+    "data-protection-mobile-apps",
+    "key-management-best-practices",
+    "zero-trust-mobile-endpoints",
+    "incident-response-app-breaches",
+    "security-champions-program",
+    "roadmap-2025-mobile-security"
+  ],
+  "posts": {
+    "cyber-security-fundamentals": {
+      "title": "Her Mühendislik Ekibinin Bilmesi Gereken Siber Güvenlik Temelleri",
+      "excerpt": "Bir sonraki mobil sürümünüzü göndermeden önce risk, güven sınırları ve derinlemesine savunma hakkında düşünmenize yardımcı temel kavramlar."
+    },
+    "mobile-threat-modeling": {
+      "title": "Elektronik Tablo Yorgunluğu Olmadan Mobil Tehdit Modelleme",
+      "excerpt": "Varlıkları, düşmanları ve giriş noktalarını gerçek güvenlik işine dönüştürmek için pratik bir yöntem."
+    },
+    "static-analysis-mastery": {
+      "title": "Statik Analiz: Gürültüden Eyleme Dönüşen Bulgulara",
+      "excerpt": "Kuralları ayarlama, yanlış pozitifleri azaltma ve tarayıcı çıktısını sahiplere ve SLA’lara bağlama."
+    },
+    "secrets-in-mobile-binaries": {
+      "title": "Sırların Hâlâ APK ve IPA İçine Sızdığı Durumlar",
+      "excerpt": "Yaygın paketleme hataları, derleme zamanı hijyeni ve saldırganlardan önce taranması gerekenler."
+    },
+    "cicd-security-gates": {
+      "title": "Ekiplerin Gerçekten Saygı Duyduğu CI/CD Güvenlik Kapıları",
+      "excerpt": "Hızı koruyan eşikler, istisnalar ve kritik sorunları gizlemeyen raporlama."
+    },
+    "compliance-for-fintech-apps": {
+      "title": "Fintech Mobil Uygulamaları İçin Uyumluluk Eşlemesi",
+      "excerpt": "Teknik bulguları PCI, GDPR ve yerel düzenleyiciler için denetime hazır dile çevirmek."
+    },
+    "owasp-mobile-top-10-overview": {
+      "title": "OWASP Mobile Top 10: Sahada Kullanılabilir Özet",
+      "excerpt": "Her kategorinin ikili analiz için anlamı ve düzeltmeleri önceliklendirme."
+    },
+    "masvs-from-theory-to-practice": {
+      "title": "MASVS: Teoriden Otomatikleştirilebilir Kontrollere",
+      "excerpt": "Standart gereksinimleri hattınızda otomatikleştirilebilir kontrollere dönüştürmek."
+    },
+    "api-security-mobile-context": {
+      "title": "Mobil Bağlamda API Güvenliği",
+      "excerpt": "Token’lar, pinning, taşıma varsayımları ve backend ekiplerinin uygulama ekibinden ihtiyaç duydukları."
+    },
+    "reverse-engineering-basics": {
+      "title": "Uygulama Geliştiricileri İçin Tersine Mühendislik Temelleri",
+      "excerpt": "Saldırganlar ikili dosyanızı açtığında ne görür ve kolay kazanımları nasıl azaltırsınız."
+    },
+    "secure-sdlc-for-mobile": {
+      "title": "Mobil Ekipler İçin Güvenli SDLC Kalıpları",
+      "excerpt": "Tasarım incelemeleri, bağımlılık hijyeni ve tek kahraman mühendisin ötesinde ölçeklenen kontrol listeleri."
+    },
+    "pentest-vs-static-analysis": {
+      "title": "Sızma Testi ve Statik Analiz: Yarışan Değil Tamamlayan",
+      "excerpt": "Ne zaman hangisine yatırım yapılır, bulgular nasıl örtüşür ve tekrarlayan iş nasıl önlenir."
+    },
+    "data-protection-mobile-apps": {
+      "title": "Cihazda ve Aktarımda Veri Koruma",
+      "excerpt": "Şifreleme, depolama API’leri ve incelemelerde tekrar tekrar görülen günlük tuzakları."
+    },
+    "key-management-best-practices": {
+      "title": "Uygulama Güncellemelerinde Ayakta Kalan Anahtar Yönetimi",
+      "excerpt": "Rotasyon, doğrulama ve güvenli ortamlar—her sürümü yangına çevirmeden."
+    },
+    "zero-trust-mobile-endpoints": {
+      "title": "Mobil Uç Noktalar İçin Sıfır Güven Düşüncesi",
+      "excerpt": "Cihaz durumu, oturum süreleri ve tüketici sınıfı uygulamalarda sürekli doğrulama."
+    },
+    "incident-response-app-breaches": {
+      "title": "Kapsamda Mobil Uygulama Olduğunda Olay Müdahalesi",
+      "excerpt": "Adli kısıtlar, kullanıcı iletişimi ve ihtiyaç duymadan önce günlüğe alınması gerekenler."
+    },
+    "security-champions-program": {
+      "title": "Kalıcı Bir Güvenlik Şampiyonları Programı Kurmak",
+      "excerpt": "Denetimler arasında güvenliği görünür kılan hafif ritüeller, ofis saatleri ve takdir."
+    },
+    "roadmap-2025-mobile-security": {
+      "title": "Yol Haritası 2025: Mobil Güvenlik Öncelikleri",
+      "excerpt": "Tedarik zinciri, yapay destekli kod ve bir sonraki değerlendirme dalgasını şekillendiren gizlilik beklentileri."
+    }
+  },
+  "articleBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae ligula nec urna tincidunt vehicula. Integer volutpat, lectus at facilisis fermentum, felis magna bibendum ex, vitae consequat nisi lacus sit amet arcu. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCurabitur at lacus ac velit ornare lobortis. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.\n\nDonec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.\n\nPraesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nAenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.\n\nMaecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Donec sed odio dui. Sed posuere consectetur est at lobortis.\n\nVestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.\n\nEtiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.\n\nPraesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.\n\nEt harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.\n\nItaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation."
+}

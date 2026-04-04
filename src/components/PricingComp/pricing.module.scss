@@ -166,8 +166,10 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--theme-fg);
-  background: linear-gradient(135deg, var(--theme-pink-base), var(--theme-blue-base));
+  color: var(--theme-primary-button-fg);
+  background: var(--theme-primary-button-bg);
+  border: 1px solid color-mix(in srgb, var(--theme-cyan) 38%, transparent);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--theme-primary-button-bg) 28%, transparent);
 }
 
 .desc {

@@ -1,30 +1,24 @@
 @use "../../styles/settings/colors" as *;
 
 .primary {
-  background-image: -webkit-linear-gradient(
-    to right,
-    var(--theme-blue-legacy) 0%,
-    var(--theme-pink-hot) 51%,
-    var(--theme-pink-hot) 100%
-  );
-  background-image: linear-gradient(
-    to right,
-    var(--theme-blue-legacy) 0%,
-    var(--theme-pink-hot) 51%,
-    var(--theme-pink-hot) 100%
-  );
+  background-color: var(--theme-primary-button-bg);
   border-radius: 3px;
-  background-size: 200% auto;
   border-style: none;
-  color: var(--theme-fg);
+  color: var(--theme-primary-button-fg);
   font-weight: 600;
   padding: 14px 33px;
   text-transform: uppercase;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
   font-size: 15px;
 
   i {
@@ -32,8 +26,17 @@
   }
 
   &:hover {
-    background-position: right center;
-    color: var(--theme-fg);
+    background-color: var(--theme-primary-button-hover);
+    color: var(--theme-primary-button-fg);
+  }
+
+  &:active {
+    background-color: var(--theme-primary-button-active);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--theme-cyan) 65%, transparent);
+    outline-offset: 3px;
   }
 }
 
