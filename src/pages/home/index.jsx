@@ -1,5 +1,16 @@
 import React from 'react';
-import { Features, Approach, Hero, CaseStudy, Compliances, Counter, Testimonials, PricingComp, Newsletter } from '@/components';
+import {
+  BlogHomeSection,
+  Features,
+  Approach,
+  Hero,
+  CaseStudy,
+  Compliances,
+  Counter,
+  Testimonials,
+  PricingComp,
+  Newsletter,
+} from '@/components';
 import s from './home.module.scss';
 
 const HomePage = () => {
@@ -13,6 +24,7 @@ const HomePage = () => {
       <PricingComp />
       <CaseStudy />
       <Testimonials />
+      <BlogHomeSection />
       <Newsletter />
     </div>
   );

@@ -1,0 +1,124 @@
+{
+  "list": {
+    "title": "Blog",
+    "subtitle": "Insights on mobile application security, static analysis, and secure delivery.",
+    "readMore": "Read article",
+    "empty": "No posts on this page.",
+    "emptyTitle": "No articles yet",
+    "emptyHint": "When new posts are published, they will show up here."
+  },
+  "home": {
+    "kicker": "From the blog",
+    "title": "Ideas for safer mobile releases",
+    "subtitle": "Short reads on security, pipelines, and compliance — straight from our team.",
+    "viewAll": "View all articles",
+    "readArticle": "Read",
+    "ariaSection": "Latest blog posts"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next",
+    "aria": "Blog pagination",
+    "pageLabel": "Page {{page}} of {{totalPages}}"
+  },
+  "detail": {
+    "back": "Back to blog",
+    "imageAlt": "Cyber security illustration",
+    "notFound": "This article could not be found."
+  },
+  "postOrder": [
+    "cyber-security-fundamentals",
+    "mobile-threat-modeling",
+    "static-analysis-mastery",
+    "secrets-in-mobile-binaries",
+    "cicd-security-gates",
+    "compliance-for-fintech-apps",
+    "owasp-mobile-top-10-overview",
+    "masvs-from-theory-to-practice",
+    "api-security-mobile-context",
+    "reverse-engineering-basics",
+    "secure-sdlc-for-mobile",
+    "pentest-vs-static-analysis",
+    "data-protection-mobile-apps",
+    "key-management-best-practices",
+    "zero-trust-mobile-endpoints",
+    "incident-response-app-breaches",
+    "security-champions-program",
+    "roadmap-2025-mobile-security"
+  ],
+  "posts": {
+    "cyber-security-fundamentals": {
+      "title": "Cyber Security Fundamentals Every Engineering Team Should Know",
+      "excerpt": "Core ideas that help you reason about risk, trust boundaries, and defense in depth before you ship your next mobile release."
+    },
+    "mobile-threat-modeling": {
+      "title": "Mobile Threat Modeling Without the Spreadsheet Fatigue",
+      "excerpt": "A practical way to capture assets, adversaries, and entry points so your backlog reflects real security work."
+    },
+    "static-analysis-mastery": {
+      "title": "Static Analysis: From Noise to Actionable Findings",
+      "excerpt": "How to tune rules, reduce false positives, and connect scanner output to owners and SLAs."
+    },
+    "secrets-in-mobile-binaries": {
+      "title": "Why Secrets Still Leak Into APKs and IPAs",
+      "excerpt": "Common packaging mistakes, build-time hygiene, and what to scan for before attackers do."
+    },
+    "cicd-security-gates": {
+      "title": "CI/CD Security Gates That Teams Actually Respect",
+      "excerpt": "Thresholds, exceptions, and reporting that keep velocity high without hiding critical issues."
+    },
+    "compliance-for-fintech-apps": {
+      "title": "Compliance Mapping for Fintech Mobile Apps",
+      "excerpt": "Translating technical findings into audit-ready language for PCI, GDPR, and local regulators."
+    },
+    "owasp-mobile-top-10-overview": {
+      "title": "OWASP Mobile Top 10: A Field-Friendly Refresher",
+      "excerpt": "What each category means for binary analysis and how to prioritize fixes."
+    },
+    "masvs-from-theory-to-practice": {
+      "title": "MASVS: From Theory to Testable Controls",
+      "excerpt": "Turning standard requirements into checks you can automate in the pipeline."
+    },
+    "api-security-mobile-context": {
+      "title": "API Security in the Mobile Context",
+      "excerpt": "Tokens, pinning, transport assumptions, and what your backend peers need from the app team."
+    },
+    "reverse-engineering-basics": {
+      "title": "Reverse Engineering Basics for App Developers",
+      "excerpt": "What attackers see when they open your binary—and how to reduce easy wins."
+    },
+    "secure-sdlc-for-mobile": {
+      "title": "Secure SDLC Patterns for Mobile Teams",
+      "excerpt": "Design reviews, dependency hygiene, and release checklists that scale beyond one hero engineer."
+    },
+    "pentest-vs-static-analysis": {
+      "title": "Penetration Testing vs Static Analysis: Complementary, Not Competing",
+      "excerpt": "When to invest in each, how findings overlap, and how to avoid duplicate work."
+    },
+    "data-protection-mobile-apps": {
+      "title": "Data Protection on Device and in Transit",
+      "excerpt": "Encryption, storage APIs, and logging pitfalls that show up again and again in reviews."
+    },
+    "key-management-best-practices": {
+      "title": "Key Management Practices That Survive App Updates",
+      "excerpt": "Rotation, attestation, and secure enclaves—without turning every release into a fire drill."
+    },
+    "zero-trust-mobile-endpoints": {
+      "title": "Zero Trust Thinking for Mobile Endpoints",
+      "excerpt": "Device posture, session lifetimes, and continuous verification in consumer-grade apps."
+    },
+    "incident-response-app-breaches": {
+      "title": "Incident Response When a Mobile App Is in Scope",
+      "excerpt": "Forensics constraints, user communication, and what to log before you need it."
+    },
+    "security-champions-program": {
+      "title": "Building a Security Champions Program That Lasts",
+      "excerpt": "Lightweight rituals, office hours, and recognition that keep security visible between audits."
+    },
+    "roadmap-2025-mobile-security": {
+      "title": "Roadmap 2025: Mobile Security Priorities",
+      "excerpt": "Supply chain, AI-assisted code, and privacy expectations shaping the next wave of assessments."
+    }
+  },
+  "articleBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.\n\nCurabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur.\n\nDonec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.\n\nPraesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nAenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.\n\nEtiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.\n\nNullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum.\n\nFusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.\n\nVivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod.\n\nPraesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.\n\nEt harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.\n\nItaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+}

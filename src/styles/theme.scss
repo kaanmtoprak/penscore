@@ -32,6 +32,11 @@ html[data-theme="light"] {
   --theme-body-text: color-mix(in srgb, var(--theme-fg) 82%, transparent);
   --theme-selection-bg: #0f766e;
   --theme-selection-fg: #f8fafc;
+
+  --theme-primary-button-bg: #0f766e;
+  --theme-primary-button-hover: #0d9488;
+  --theme-primary-button-active: #115e59;
+  --theme-primary-button-fg: #f8fafc;
 }
 
 html[data-theme="dark"] {
@@ -67,4 +72,9 @@ html[data-theme="dark"] {
   --theme-body-text: color-mix(in srgb, var(--theme-fg) 80%, transparent);
   --theme-selection-bg: #0d9488;
   --theme-selection-fg: #f8fafc;
+
+  --theme-primary-button-bg: #115e59;
+  --theme-primary-button-hover: #0d9488;
+  --theme-primary-button-active: #0f766e;
+  --theme-primary-button-fg: #ecfdf5;
 }

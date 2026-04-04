@@ -4,9 +4,12 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import Wrapper from '@/layouts/Wrapper';
 import {
   AboutPage,
+  BlogDetailPage,
+  BlogPage,
   ContactPage,
   HomePage,
   NotFoundPage,
+  PaymentPage,
   PricingPage,
 } from '@/pages';
 
@@ -22,6 +25,9 @@ const App = () => {
         <Route path="/about" element={withWrapper(<AboutPage />)} />
         <Route path="/pricing" element={withWrapper(<PricingPage />)} />
         <Route path="/contact" element={withWrapper(<ContactPage />)} />
+        <Route path="/blog" element={withWrapper(<BlogPage />)} />
+        <Route path="/blog/:slug" element={withWrapper(<BlogDetailPage />)} />
+        <Route path="/payment/:id" element={withWrapper(<PaymentPage />)} />
         <Route path="/404" element={withWrapper(<NotFoundPage />)} />
         <Route path="/.well-known/appspecific/com.chrome.devtools.json" element={<Navigate to="/" replace />} />
         <Route path="*" element={withWrapper(<NotFoundPage />)} />

@@ -14,6 +14,7 @@ const cn = (...parts) => {
 const MENU_LINKS = [
   { id: 1, navKey: 'home', link: '/' },
   { id: 2, navKey: 'about', link: '/about' },
+  { id: 4, navKey: 'blog', link: '/blog' },
   { id: 5, navKey: 'pricing', link: '/pricing' },
   { id: 9, navKey: 'contact', link: '/contact' },
 ];
@@ -85,6 +86,11 @@ const Header = () => {
     setLangOpen(false);
   };
 
+  const isNavActive = (link) => {
+    if (link === '/blog') return pathname === '/blog' || pathname.startsWith('/blog/');
+    return pathname === link;
+  };
+
   return (
     <>
       <header className={cn(s.header, sticky && s.headerSticky)}>
@@ -100,7 +106,7 @@ const Header = () => {
               <ul>
                 {MENU_LINKS.map((item, i) => (
                   <li key={i}>
-                    <Link href={item.link} className={cn(pathname === item.link && s.navLinkActive)}>
+                    <Link href={item.link} className={cn(isNavActive(item.link) && s.navLinkActive)}>
                       {t(`global.nav.${item.navKey}`)}
                     </Link>
                   </li>
@@ -210,7 +216,7 @@ const Header = () => {
               <li key={i} className={s.mobileItem}>
                 <Link
                   href={item.link}
-                  className={cn(s.mobileLeafLink, pathname === item.link && s.mobileLeafLinkActive)}
+                  className={cn(s.mobileLeafLink, isNavActive(item.link) && s.mobileLeafLinkActive)}
                   onClick={closeMenu}
                 >
                   {t(`global.nav.${item.navKey}`)}

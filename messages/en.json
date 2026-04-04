@@ -380,6 +380,7 @@
     "nav": {
       "home": "Home",
       "about": "About",
+      "blog": "Blog",
       "contact": "Contact",
       "cta": "Get started now",
       "ariaMainNav": "Main navigation",
